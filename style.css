@@ -4,8 +4,7 @@ body { font-family: 'Inter', sans-serif; }
 
 /* Hero Styling */
 .hero-bg {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                      url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&q=80&w=1920');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('image/poulet_pdt.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -38,6 +37,7 @@ body { font-family: 'Inter', sans-serif; }
 .product-card {
     position: relative;
     overflow: hidden;
+    border-radius: 15px;
 }
 .product-img {
     width: 100%;

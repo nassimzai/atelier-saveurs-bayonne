@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Atelier des Saveurs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#FFFCF9]">
+
+    <!-- NAVBAR -->
+    <nav id="navbar"
+        class="fixed w-full z-50 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-white">
+        <div class="flex items-center gap-4">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-4">
+                <img src="image/logo.png" alt="Logo L'Atelier des Saveurs" class="h-12 w-auto object-contain">
+
+                <!-- Nom du site -->
+                <div class="text-2xl font-bold tracking-widest uppercase font-serif hidden sm:block">
+                    L'Atelier des Saveurs
+                </div>
+            </a>
+        </div>
+
+        <div class="hidden md:flex space-x-10 items-center text-sm uppercase tracking-widest font-medium">
+            <a href="index.html" class="nav-link">Accueil</a>
+            <a href="rotisserie.html" class="nav-link">Rotisserie</a>
+            <a href="plats.html" class="nav-link">Plats</a>
+            <a href="patisseries.html" class="nav-link">Pâtisseries</a>
+            <a href="cheffe.html" class="nav-link">La Cheffe</a>
+            <a href="avis.html" class="nav-link">Avis</a>
+            <a href="index.html#contact" class="bg-amber-600 hover:bg-amber-700 px-6 py-2 transition-colors">Contact</a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-stone-900 z-[60] flex flex-col items-center justify-center space-y-8 text-xl text-white transition-transform duration-500 translate-x-full">
+        <button id="close-btn" class="absolute top-8 right-8 text-4xl">&times;</button>
+        <a href="index.html" class="m-link">Accueil</a>
+        <a href="rotisserie.html" class="m-link">Rotisserie</a>
+        <a href="plats.html" class="m-link">Plats</a>
+        <a href="patisseries.html" class="m-link">Pâtisseries</a>
+        <a href="cheffe.html" class="m-link">La Cheffe</a>
+        <a href="avis.html" class="m-link">Avis</a>
+        <a href="index.html#contact" class="bg-amber-600 px-10 py-3 m-link">Contact</a>
+    </div>
+
+    <section class="pt-40 pb-20 bg-stone-900 text-center text-white">
+        <h1 class="text-5xl md:text-7xl font-serif mb-4">La Rôtisserie</h1>
+        <p class="text-amber-600 uppercase tracking-widest text-sm">Poulet fermier & Accompagnements</p>
+    </section>
+
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="flex justify-between border-b border-stone-200 pb-4">
+                <div>
+                    <h3 class="text-xl font-serif font-bold">Poulet Fermier Entier</h3>
+                    <p class="text-stone-500 italic">Élevé en plein air, rôti à la broche</p>
+                </div>
+                <span class="text-amber-600 font-bold">18.50€</span>
+            </div>
+            <div class="flex justify-between border-b border-stone-200 pb-4">
+                <div>
+                    <h3 class="text-xl font-serif font-bold">Pommes de Terre Grenailles</h3>
+                    <p class="text-stone-500 italic">Cuites dans le jus du poulet</p>
+                </div>
+                <span class="text-amber-600 font-bold">5.00€</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <footer id="contact" class="bg-stone-900 text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between">
+            <div class="max-w-3xl text-left space-y-6">
+                <div>
+                    <h2 class="text-4xl font-serif mb-8">Contactez l'Atelier des Saveurs</h2>
+                    <p class="text-stone-400 mb-10">Pour toute commande spéciale, notre équipe est à votre écoute.</p>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-stone-300"><a href="https://maps.app.goo.gl/EuNjgtDR8Jb3fDvD9" target="_blank"
+                            class="hover:text-amber-600 transition">Adresse : 133 rue Maubec, Bayonne 64100</a></p>
+                    <p class="text-stone-300">Téléphone : +33 06 65 44 13 06</p>
+                    <p class="text-stone-300">Email : adsbayonne@gmail.com</p>
+                </div>
+            </div>
+            <div class="max-w-3xl text-right space-y-6">
+                <div>
+                    <h2 class="text-4xl font-serif mb-8">Nos réseaux sociaux</h2>
+                </div>
+                <div class="flex gap-6 mt-4">
+                    <a href="https://www.facebook.com/profile.php?id=100063556803206" target="_blank"
+                        class="text-stone-300 hover:text-amber-600 transition text-2xl">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/latelier.des.saveurs/" target="_blank"
+                        class="text-stone-300 hover:text-pink-500 transition text-2xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
