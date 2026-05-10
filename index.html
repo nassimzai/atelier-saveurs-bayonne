@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Atelier des Saveurs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#FFFCF9]">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-white">
+        <div class="text-2xl font-bold tracking-widest uppercase font-serif">L'Atelier des Saveurs</div>
+        
+        <div class="hidden md:flex space-x-10 items-center text-sm uppercase tracking-widest font-medium">
+            <a href="#accueil" class="nav-link">Accueil</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#produits" class="nav-link">Créations</a>
+            <a href="#chef" class="nav-link">Le Chef</a>
+            <a href="#contact" class="bg-amber-600 hover:bg-amber-700 px-6 py-2 transition-colors">Contact</a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 bg-stone-900 z-[60] flex flex-col items-center justify-center space-y-8 text-xl text-white transition-transform duration-500 translate-x-full">
+        <button id="close-btn" class="absolute top-8 right-8 text-4xl">&times;</button>
+        <a href="#accueil" class="m-link">Accueil</a>
+        <a href="#services" class="m-link">Services</a>
+        <a href="#produits" class="m-link">Créations</a>
+        <a href="#chef" class="m-link">Le Chef</a>
+        <a href="#contact" class="bg-amber-600 px-10 py-3 m-link">Réserver</a>
+    </div>
+
+    <!-- HERO -->
+    <section id="accueil" class="hero-bg h-screen relative flex items-center justify-center text-center text-white overflow-hidden">
+        <div class="relative z-10 px-4">
+            <span class="block uppercase tracking-[0.4em] text-sm mb-6 animate-fade-up">Tradition & Modernité</span>
+            <h1 class="text-5xl md:text-8xl font-serif mb-8 animate-fade-up-delay">L'Art de la Pâtisserie</h1>
+            <p class="max-w-xl mx-auto text-lg md:text-xl opacity-90 font-light mb-10">Une expérience gustative unique où chaque création raconte une histoire d'excellence.</p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#produits" class="bg-white text-stone-900 px-10 py-4 font-medium hover:bg-amber-50 transition">Découvrir</a>
+                <a href="#contact" class="border border-white px-10 py-4 font-medium hover:bg-white hover:text-stone-900 transition">Nous trouver</a>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-black/30"></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl font-serif mb-4">Nos Spécialités</h2>
+            <div class="h-1 w-20 bg-amber-600 mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div class="service-item text-center">
+                <div class="text-5xl mb-6">🥐</div>
+                <h3 class="text-2xl font-serif mb-4">Boulangerie Fine</h3>
+                <p class="text-stone-500 leading-relaxed italic">Des pains artisanaux pétris à la main avec des farines biologiques locales.</p>
+            </div>
+            <div class="service-item text-center">
+                <div class="text-5xl mb-6">🍰</div>
+                <h3 class="text-2xl font-serif mb-4">Haute Pâtisserie</h3>
+                <p class="text-stone-500 leading-relaxed italic">L'équilibre parfait entre textures et saveurs pour vos moments d'exception.</p>
+            </div>
+            <div class="service-item text-center">
+                <div class="text-5xl mb-6">🍫</div>
+                <h3 class="text-2xl font-serif mb-4">Chocolaterie</h3>
+                <p class="text-stone-500 leading-relaxed italic">Des crus d'exception transformés en douceurs inoubliables par nos maîtres.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION HISTOIRE / CHEF -->
+    <section id="chef" class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-6 flex justify-center">
+            <div class="space-y-6 text-center max-w-3xl">
+                <h2 class="text-amber-600 text-4xl md:text-5xl font-serif leading-tight">Notre Histoire</h2>
+                <p class="text-stone-600 leading-relaxed text-lg">Situé au nord de Bayonne, L'Atelier des Saveurs est le rendez-vous des amoureux de la cuisine authentique. Spécialistes du poulet fermier rôti à la perfection, nous vous proposons également un voyage gustatif à travers nos tajines, couscous et plats du monde. Ici, pas de surgelé : tout est cuisiné avec le cœur et des produits frais. Que ce soit sur place, à emporter ou pour vos événements traiteur, nous mettons la passion du goût au centre de votre assiette.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUITS / GALERIE -->
+    <section id="produits" class="py-24">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="product-card group h-[450px]">
+                <img src="image/curry.jpg" class="product-img">
+                <div class="product-overlay"><span>L'Eclair Or Noir</span></div>
+            </div>
+            <div class="product-card group h-[450px]">
+                <img src="image/macroute.jpg" class="product-img">
+                <div class="product-overlay"><span>Paris-Brest Signature</span></div>
+            </div>
+            <div class="product-card group h-[450px]">
+                <img src="image/poulet_pdt.jpg" class="product-img">
+                <div class="product-overlay"><span>Pain de Campagne</span></div>
+            </div>
+            <div class="product-card group h-[450px]">
+                <img src="image/tartelette-citron.jpg" class="product-img">
+                <div class="product-overlay"><span>Tartelette Citron</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <footer id="contact" class="bg-stone-900 text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto flex justify-center">
+            <div class="max-w-3xl text-center space-y-6">
+                <div>
+                    <h2 class="text-4xl font-serif mb-8">Contactez l'Atelier des Saveurs</h2>
+                    <p class="text-stone-400 mb-10">Pour toute commande spéciale, notre équipe est à votre écoute.</p>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-stone-300">Adresse : 133 rue Maubec, Bayonne 64100</p>
+                    <p class="text-stone-300">Téléphone : +33 06 65 44 13 06</p>
+                    <p class="text-stone-300">Email : adsbayonne@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
