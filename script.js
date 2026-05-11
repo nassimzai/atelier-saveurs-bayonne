@@ -6,10 +6,10 @@ const mobileMenu = document.getElementById('mobile-menu');
 // 1. Scroll Effect pour la Navbar
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-        nav.classList.add('bg-[#1a1a1a]', 'py-4', 'shadow-2xl');
+        nav.classList.add('bg-[#1A0A00]', 'py-4', 'shadow-2xl');
         nav.classList.remove('py-6');
     } else {
-        nav.classList.remove('bg-[#1a1a1a]', 'py-4', 'shadow-2xl');
+        nav.classList.remove('bg-[#1A0A00]', 'py-4', 'shadow-2xl');
         nav.classList.add('py-6');
     }
 });
