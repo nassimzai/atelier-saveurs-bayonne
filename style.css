@@ -94,3 +94,11 @@ body { font-family: 'Inter', sans-serif; }
 
 /* Responsive Mobile Menu State */
 #mobile-menu.open { transform: translateX(0); }
+
+.sticky-tabs {
+    position: sticky;
+    top: 72px;
+    z-index: 40;
+    background: #FDF6ED;
+    border-bottom: 1px solid #E8D5C0;
+}

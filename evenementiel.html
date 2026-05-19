@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="L'Atelier des Saveurs propose ses services traiteur pour tous vos événements à Bayonne : mariages, anniversaires, réceptions professionnelles.">
+    <title>L'Atelier des Saveurs | Événementiel & Traiteur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="image/favicon.png?v=1">
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="image/logo.png">
+    <style>
+        .form-field {
+            width: 100%;
+            background: white;
+            border: 1px solid #E8D5C0;
+            padding: 0.85rem 1rem;
+            color: #1A0A00;
+            outline: none;
+            transition: border-color 0.3s;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+        .form-field:focus { border-color: #C8531A; }
+        .form-field::placeholder { color: #B89880; }
+    </style>
+</head>
+
+<body class="bg-[#1A0A00] text-white">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-white">
+        <div class="flex items-center gap-4">
+            <a href="index.html" class="flex items-center gap-4">
+                <img src="image/logo.png" alt="Logo L'Atelier des Saveurs" class="h-12 w-auto object-contain">
+                <div class="text-2xl font-bold tracking-widest uppercase font-serif hidden sm:block">L'Atelier des Saveurs</div>
+            </a>
+        </div>
+        <div class="hidden md:flex space-x-10 items-center text-sm uppercase tracking-widest font-medium">
+            <a href="index.html" class="nav-link">Accueil</a>
+            <a href="carte.html" class="nav-link">La Carte</a>
+            <a href="evenementiel.html" class="nav-link">Événements</a>
+            <a href="cheffe.html" class="nav-link">La Cheffe</a>
+            <a href="avis.html" class="nav-link">Avis</a>
+            <a href="evenementiel.html" class="bg-[#C8531A] hover:bg-[#A8421A] px-6 py-2 transition-colors">Contact</a>
+        </div>
+        <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#1A0A00] z-[60] flex flex-col items-center justify-center space-y-8 text-xl text-white transition-transform duration-500 translate-x-full">
+        <button id="close-btn" class="absolute top-8 right-8 text-4xl">&times;</button>
+        <a href="index.html" class="m-link">Accueil</a>
+        <a href="carte.html" class="m-link">La Carte</a>
+        <a href="evenementiel.html" class="m-link">Événements</a>
+        <a href="cheffe.html" class="m-link">La Cheffe</a>
+        <a href="avis.html" class="m-link">Avis</a>
+        <a href="evenementiel.html" class="bg-[#C8531A] px-10 py-3 m-link">Contact</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="pt-40 pb-20 bg-[#1A0A00] text-center text-white section-gradient">
+        <h1 class="text-5xl md:text-7xl font-serif mb-4">Événementiel</h1>
+        <p class="text-[#C8531A] uppercase tracking-widest text-sm">Traiteur sur mesure pour vos réceptions</p>
+    </section>
+
+    <!-- PRESENTATION + FORM -->
+    <section class="bg-[#FDF6ED] py-20 px-6">
+        <div class="max-w-3xl mx-auto">
+
+            <!-- Présentation -->
+            <div class="text-center mb-14">
+                <p class="text-[#6B4226] text-lg leading-relaxed mb-6">
+                    L'Atelier des Saveurs propose ses saveurs pour vos événements privés et professionnels : mariages, anniversaires, baptêmes, séminaires… Chaque prestation est préparée avec soin, en <span class="font-semibold text-[#1A0A00]">100% fait maison</span>, avec des produits frais et des recettes authentiques.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-[#8B6347]">
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C8531A]"></i> Couscous & Tajines</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C8531A]"></i> Rôtisserie fermière</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C8531A]"></i> Formules sur mesure</span>
+                </div>
+            </div>
+
+            <!-- Formulaire -->
+            <div class="rounded-[28px] border border-[#F1D0A0] bg-[#FFF4D1] p-8 md:p-10 shadow-[0_20px_60px_rgba(26,10,0,0.10)]">
+                <h2 class="text-2xl font-serif font-bold text-[#1A0A00] mb-8 text-center">Faites-nous part de votre demande</h2>
+
+                <div class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Nom *</label>
+                            <input type="text" id="nom" class="form-field" placeholder="Votre nom">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Prénom *</label>
+                            <input type="text" id="prenom" class="form-field" placeholder="Votre prénom">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Téléphone *</label>
+                        <input type="tel" id="telephone" class="form-field" placeholder="Ex : 06 12 34 56 78">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Sujet de la demande *</label>
+                        <input type="text" id="sujet" class="form-field" placeholder="Ex : Mariage, anniversaire, buffet d'entreprise…">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Description de la demande *</label>
+                        <textarea id="description" rows="5" class="form-field resize-none" placeholder="Décrivez votre événement : date, nombre de personnes, plats souhaités, lieu…"></textarea>
+                    </div>
+
+                    <div id="form-error" class="hidden text-red-700 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+                        <i class="fa-solid fa-circle-exclamation mr-2"></i>Veuillez remplir tous les champs obligatoires.
+                    </div>
+
+                    <button id="submit-btn" class="w-full bg-[#C8531A] hover:bg-[#A8421A] text-white py-4 font-medium uppercase tracking-widest text-sm transition-colors rounded-md flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-paper-plane"></i> Envoyer ma demande
+                    </button>
+
+                    <p class="text-center text-[#A8825F] text-xs">Votre messagerie s'ouvrira avec votre demande adressée à <span class="font-medium">adsbayonne@gmail.com</span></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-[#1A0A00] text-white py-16 md:py-24 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-0">
+            <div class="max-w-3xl space-y-6">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif mb-6 md:mb-8">Contactez l'Atelier des Saveurs</h2>
+                    <p class="text-[#A8825F] mb-6 md:mb-10">Pour toute commande spéciale, notre équipe est à votre écoute.</p>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-[#C4A882]">
+                        <a href="https://maps.google.com/?q=133+rue+Maubec+Bayonne+64100" target="_blank" class="hover:text-[#C8531A] transition flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot"></i> 133 rue Maubec, Bayonne 64100
+                        </a>
+                    </p>
+                    <p class="text-[#C4A882] flex items-center gap-2"><i class="fa-solid fa-phone"></i> +33 06 65 44 13 06</p>
+                    <p class="text-[#C4A882] flex items-center gap-2"><i class="fa-solid fa-envelope"></i> adsbayonne@gmail.com</p>
+                </div>
+            </div>
+            <div class="max-w-3xl text-left md:text-right space-y-6">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif mb-6 md:mb-8">Nos réseaux sociaux</h2>
+                </div>
+                <div class="flex gap-6 mt-4 justify-start md:justify-end">
+                    <a href="https://www.facebook.com/profile.php?id=100063556803206" target="_blank" class="text-[#C4A882] hover:text-[#C8531A] transition text-3xl">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/latelier.des.saveurs/" target="_blank" class="text-[#C4A882] hover:text-pink-500 transition text-3xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Remplace les valeurs ci-dessous par tes identifiants EmailJS
+        const EMAILJS_PUBLIC_KEY  = 'VOTRE_PUBLIC_KEY';   // Account > General > Public Key
+        const EMAILJS_SERVICE_ID  = 'VOTRE_SERVICE_ID';   // Email Services > Service ID
+        const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID';  // Email Templates > Template ID
+
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        document.getElementById('submit-btn').addEventListener('click', () => {
+            const nom         = document.getElementById('nom').value.trim();
+            const prenom      = document.getElementById('prenom').value.trim();
+            const telephone   = document.getElementById('telephone').value.trim();
+            const sujet       = document.getElementById('sujet').value.trim();
+            const description = document.getElementById('description').value.trim();
+            const errorDiv    = document.getElementById('form-error');
+            const btn         = document.getElementById('submit-btn');
+
+            if (!nom || !prenom || !telephone || !sujet || !description) {
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            errorDiv.classList.add('hidden');
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours…';
+
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                nom,
+                prenom,
+                telephone,
+                sujet,
+                description
+            }).then(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Demande envoyée !';
+                btn.classList.replace('bg-[#C8531A]', 'bg-green-600');
+                ['nom','prenom','telephone','sujet','description'].forEach(id => {
+                    document.getElementById(id).value = '';
+                });
+            }).catch(() => {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Envoyer ma demande';
+                errorDiv.textContent = "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.";
+                errorDiv.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

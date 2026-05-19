@@ -47,3 +47,37 @@ document.querySelectorAll('.service-item, .product-card').forEach(el => {
     el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
     observer.observe(el);
 });
+
+// Sticky tabs: click anchors and center the target section
+const tabLinks = document.querySelectorAll('.sticky-tabs a[href^="#tab-"]');
+const activateTabLink = (link) => {
+    if (!link) return;
+    tabLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+    link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+};
+
+tabLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const href = link.getAttribute('href');
+        const targetId = href && href.startsWith('#') ? href.slice(1) : null;
+        if (!targetId) return;
+
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        activateTabLink(link);
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        history.replaceState(null, '', `#${targetId}`);
+    });
+});
+
+window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (!hash) return;
+    const link = document.querySelector(`.sticky-tabs a[href="${hash}"]`);
+    if (link) {
+        activateTabLink(link);
+    }
+});
