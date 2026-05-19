@@ -20,9 +20,9 @@ jobs:
 
       - name: Inject EmailJS secrets
         run: |
-          sed -i "s/VOTRE_PUBLIC_KEY/${{ secrets.EMAILJS_PUBLIC_KEY }}/g" evenementiel.html
-          sed -i "s/VOTRE_SERVICE_ID/${{ secrets.EMAILJS_SERVICE_ID }}/g" evenementiel.html
-          sed -i "s/VOTRE_TEMPLATE_ID/${{ secrets.EMAILJS_TEMPLATE_ID }}/g" evenementiel.html
+          sed -i "s|VOTRE_PUBLIC_KEY|${{ secrets.EMAILJS_PUBLIC_KEY }}|g" evenementiel.html
+          sed -i "s|VOTRE_SERVICE_ID|${{ secrets.EMAILJS_SERVICE_ID }}|g" evenementiel.html
+          sed -i "s|VOTRE_TEMPLATE_ID|${{ secrets.EMAILJS_TEMPLATE_ID }}|g" evenementiel.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
