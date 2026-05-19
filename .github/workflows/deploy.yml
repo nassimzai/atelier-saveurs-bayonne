@@ -19,10 +19,21 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Inject EmailJS secrets
+        env:
+          PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
+          SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
+          TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
         run: |
-          sed -i "s|VOTRE_PUBLIC_KEY|${{ secrets.EMAILJS_PUBLIC_KEY }}|g" evenementiel.html
-          sed -i "s|VOTRE_SERVICE_ID|${{ secrets.EMAILJS_SERVICE_ID }}|g" evenementiel.html
-          sed -i "s|VOTRE_TEMPLATE_ID|${{ secrets.EMAILJS_TEMPLATE_ID }}|g" evenementiel.html
+          python3 - <<'EOF'
+          import os
+          with open('evenementiel.html', 'r') as f:
+              content = f.read()
+          content = content.replace('VOTRE_PUBLIC_KEY', os.environ['PUBLIC_KEY'])
+          content = content.replace('VOTRE_SERVICE_ID', os.environ['SERVICE_ID'])
+          content = content.replace('VOTRE_TEMPLATE_ID', os.environ['TEMPLATE_ID'])
+          with open('evenementiel.html', 'w') as f:
+              f.write(content)
+          EOF
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
