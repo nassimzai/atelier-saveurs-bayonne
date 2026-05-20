@@ -76,7 +76,7 @@
             <!-- Présentation -->
             <div class="text-center mb-14">
                 <p class="text-[#6B4226] text-lg leading-relaxed mb-6">
-                    L'Atelier des Saveurs propose ses saveurs pour vos événements privés et professionnels : mariages, anniversaires, baptêmes, séminaires… Chaque prestation est préparée avec soin, en <span class="font-semibold text-[#1A0A00]">100% fait maison</span>, avec des produits frais et des recettes authentiques.
+                    L'Atelier des Saveurs propose ses services pour vos événements privés et professionnels : mariages, anniversaires, baptêmes, séminaires… Chaque prestation est préparée avec soin, avec des produits frais et des recettes authentiques.
                 </p>
                 <div class="flex flex-wrap justify-center gap-6 text-sm text-[#8B6347]">
                     <span class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C8531A]"></i> Couscous & Tajines</span>
@@ -101,9 +101,15 @@
                         </div>
                     </div>
 
-                    <div>
-                        <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Téléphone *</label>
-                        <input type="tel" id="telephone" class="form-field" placeholder="Ex : 06 12 34 56 78">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Téléphone *</label>
+                            <input type="tel" id="telephone" class="form-field" placeholder="Ex : 06 12 34 56 78">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Email *</label>
+                            <input type="email" id="email" class="form-field" placeholder="votre@email.com">
+                        </div>
                     </div>
 
                     <div>
@@ -188,12 +194,13 @@
             const nom         = document.getElementById('nom').value.trim();
             const prenom      = document.getElementById('prenom').value.trim();
             const telephone   = document.getElementById('telephone').value.trim();
+            const email       = document.getElementById('email').value.trim();
             const sujet       = document.getElementById('sujet').value.trim();
             const description = document.getElementById('description').value.trim();
             const errorDiv    = document.getElementById('form-error');
             const btn         = document.getElementById('submit-btn');
 
-            if (!nom || !prenom || !telephone || !sujet || !description) {
+            if (!nom || !prenom || !telephone || !email || !sujet || !description) {
                 errorDiv.classList.remove('hidden');
                 return;
             }
@@ -206,12 +213,13 @@
                 nom,
                 prenom,
                 telephone,
+                email,
                 sujet,
                 description
             }).then(() => {
                 btn.innerHTML = '<i class="fa-solid fa-check"></i> Demande envoyée !';
                 btn.classList.replace('bg-[#C8531A]', 'bg-green-600');
-                ['nom','prenom','telephone','sujet','description'].forEach(id => {
+                ['nom','prenom','telephone','email','sujet','description'].forEach(id => {
                     document.getElementById(id).value = '';
                 });
             }).catch(() => {
