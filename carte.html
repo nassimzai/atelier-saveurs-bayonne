@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Découvrez la carte complète de L'Atelier des Saveurs : rôtisserie, plats du monde, couscous, tajines et pâtisseries artisanales à Bayonne.">
     <title>L'Atelier des Saveurs | La Carte</title>
+    <link rel="canonical" href="https://latelierdessaveurs-bayonne.fr/carte.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="L'Atelier des Saveurs">
+    <meta property="og:title" content="L'Atelier des Saveurs | La Carte">
+    <meta property="og:description" content="Découvrez la carte complète de L'Atelier des Saveurs : rôtisserie, plats du monde, couscous, tajines et pâtisseries artisanales à Bayonne.">
+    <meta property="og:url" content="https://latelierdessaveurs-bayonne.fr/carte.html">
+    <meta property="og:image" content="https://latelierdessaveurs-bayonne.fr/image/poulet_pdt.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -17,65 +26,71 @@
 
 <body class="bg-[#1A0A00] text-white">
 
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+
     <!-- NAVBAR -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-white">
+    <header>
+    <nav id="navbar" aria-label="Navigation principale" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-white">
         <div class="flex items-center gap-4">
-            <a href="index.html" class="flex items-center gap-4">
-                <img src="image/logo.png" alt="Logo L'Atelier des Saveurs" class="h-12 w-auto object-contain">
-                <div class="text-2xl font-bold tracking-widest uppercase font-serif hidden sm:block">L'Atelier des Saveurs</div>
+            <a href="index.html" class="flex items-center gap-4" aria-label="L'Atelier des Saveurs – Accueil">
+                <img src="image/logo.png" alt="" width="150" height="150" class="h-12 w-auto object-contain">
+                <div class="text-2xl font-bold tracking-widest uppercase font-serif hidden sm:block" aria-hidden="true">L'Atelier des Saveurs</div>
             </a>
         </div>
         <div class="hidden md:flex space-x-10 items-center text-sm uppercase tracking-widest font-medium">
             <a href="index.html" class="nav-link">Accueil</a>
-            <a href="carte.html" class="nav-link">La Carte</a>
+            <a href="carte.html" class="nav-link" aria-current="page">La Carte</a>
             <a href="evenementiel.html" class="nav-link">Événements</a>
             <a href="cheffe.html" class="nav-link">La Cheffe</a>
             <a href="avis.html" class="nav-link">Avis</a>
-            <a href="evenementiel.html" class="bg-[#C8531A] hover:bg-[#A8421A] px-6 py-2 transition-colors">Contact</a>
+            <a href="evenementiel.html#demande" class="btn-nav">Contact</a>
         </div>
-        <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+        <button id="menu-btn" type="button" class="md:hidden text-3xl" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu"><span aria-hidden="true">☰</span></button>
     </nav>
+    </header>
 
     <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#1A0A00] z-[60] flex flex-col items-center justify-center space-y-8 text-xl text-white transition-transform duration-500 translate-x-full">
-        <button id="close-btn" class="absolute top-8 right-8 text-4xl">&times;</button>
+    <nav id="mobile-menu" aria-label="Menu mobile" aria-hidden="true" inert class="fixed inset-0 bg-[#1A0A00] z-[60] flex flex-col items-center justify-center space-y-8 text-xl text-white transition-transform duration-500 translate-x-full">
+        <button id="close-btn" type="button" class="absolute top-8 right-8 text-4xl" aria-label="Fermer le menu"><span aria-hidden="true">&times;</span></button>
         <a href="index.html" class="m-link">Accueil</a>
-        <a href="carte.html" class="m-link">La Carte</a>
+        <a href="carte.html" class="m-link" aria-current="page">La Carte</a>
         <a href="evenementiel.html" class="m-link">Événements</a>
         <a href="cheffe.html" class="m-link">La Cheffe</a>
         <a href="avis.html" class="m-link">Avis</a>
-        <a href="evenementiel.html" class="bg-[#C8531A] px-10 py-3 m-link">Contact</a>
-    </div>
+        <a href="evenementiel.html#demande" class="bg-[#B34A17] px-10 py-3 m-link">Contact</a>
+    </nav>
+
+    <main id="contenu" tabindex="-1">
 
     <!-- HERO -->
     <section class="pt-40 pb-20 bg-[#1A0A00] text-center text-white section-gradient">
         <h1 class="text-5xl md:text-7xl font-serif mb-4">Notre Carte</h1>
-        <p class="text-[#C8531A] uppercase tracking-widest text-sm">Rôtisserie • Plats du Monde • Douceurs Artisanales</p>
+        <p class="text-[#FFE3C2] uppercase tracking-widest text-sm">Rôtisserie • Plats du Monde • Douceurs Artisanales</p>
     </section>
 
     <!-- STICKY TABS -->
-    <div class="sticky-tabs">
+    <nav class="sticky-tabs" aria-label="Catégories de la carte">
         <div class="max-w-7xl mx-auto px-6 flex gap-0 overflow-x-auto">
             <a href="#tab-plats-signature" class="text-[#6B4226] font-medium uppercase tracking-widest text-sm px-6 py-4 whitespace-nowrap">
-                <i class="fa-solid fa-bowl-food mr-2"></i> Plats Signature
+                <i class="fa-solid fa-bowl-food mr-2" aria-hidden="true"></i> Plats Signature
             </a>
             <a href="#tab-rotisserie" class="text-[#6B4226] font-medium uppercase tracking-widest text-sm px-6 py-4 whitespace-nowrap">
-                <i class="fa-solid fa-drumstick-bite mr-2"></i> Rôtisserie
+                <i class="fa-solid fa-drumstick-bite mr-2" aria-hidden="true"></i> Rôtisserie
             </a>
             <a href="#tab-plats" class="text-[#6B4226] font-medium uppercase tracking-widest text-sm px-6 py-4 whitespace-nowrap">
-                <i class="fa-solid fa-bowl-food mr-2"></i> Plats
+                <i class="fa-solid fa-bowl-food mr-2" aria-hidden="true"></i> Plats
             </a>
             <a href="#tab-couscous" class="text-[#6B4226] font-medium uppercase tracking-widest text-sm px-6 py-4 whitespace-nowrap">
-                <i class="fa-solid fa-bowl-food mr-2"></i> Couscous
+                <i class="fa-solid fa-bowl-food mr-2" aria-hidden="true"></i> Couscous
             </a>
             <a href="#tab-tajine" class="text-[#6B4226] font-medium uppercase tracking-widest text-sm px-6 py-4 whitespace-nowrap">
-                <i class="fa-solid fa-bowl-food mr-2"></i> Tajine
+                <i class="fa-solid fa-bowl-food mr-2" aria-hidden="true"></i> Tajine
             </a>
             <a href="#tab-patisseries" class="text-[#6B4226] font-medium uppercase tracking-widest text-sm px-6 py-4 whitespace-nowrap">
-                <i class="fa-solid fa-cake mr-2"></i> Pâtisseries
+                <i class="fa-solid fa-cake mr-2" aria-hidden="true"></i> Pâtisseries
             </a>
         </div>
-    </div>
+    </nav>
 
     <!-- MENU CONTENT -->
     <section class="bg-[#FDF6ED] text-[#1A0A00] py-16 px-6">
@@ -85,14 +100,14 @@
             <div class="space-y-16 rounded-[32px] border border-[#F1D0A0] bg-[#E8C785] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                 <div class="rounded-[32px] border border-[#F1D0A0] bg-[#FFF4D1] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                 <div id="tab-plats-signature" class="mb-8 flex flex-col gap-3 text-center">
-                    <h3 class="text-3xl font-serif font-bold">Plats Signature</h3>
+                    <h2 class="text-3xl font-serif font-bold">Plats Signature</h2>
                     <p class="text-[#8B6347]">Découvre nos créations savoureuses</p>
                 </div>
                 <div class="space-y-6">
                     <div class="border-b border-[#E8D5C0] pb-6">
                         <div class="flex flex-col md:flex-row gap-4 justify-center">
                             <div class="text-center max-w-2xl">
-                                <h4 class="text-xl font-serif font-bold">Le Bon Quart</h4>
+                                <h3 class="text-xl font-serif font-bold">Le Bon Quart</h3>
                                 <p class="text-[#8B6347] italic">1/4 de poulet rôti fermier plus accompagnement pommes de terre grenailles.</p>
                             </div>
                         </div>
@@ -100,7 +115,7 @@
                     <div class="border-b border-[#E8D5C0] pb-6">
                         <div class="flex flex-col md:flex-row gap-4 justify-center">
                             <div class="text-center max-w-2xl">
-                                <h4 class="text-xl font-serif font-bold">Couscous Royal</h4>
+                                <h3 class="text-xl font-serif font-bold">Couscous Royal</h3>
                                 <p class="text-[#8B6347] italic">3 viandes : poulet fermier, merguez du boucher et agneau fondant. Légumes de saison, pois chiches, bouillons parfumés aux épices de l'atelier, Tfaya (confit d'oignons et raisins secs gourmands), (sauce piquante à la demande) et semoule vapeur parfumée au beurre.</p>
                             </div>
                         </div>
@@ -108,7 +123,7 @@
                     <div class="border-b border-[#E8D5C0] pb-6">
                         <div class="flex flex-col md:flex-row gap-4 justify-center">
                             <div class="text-center max-w-2xl">
-                                <h4 class="text-xl font-serif font-bold">Couscous Poisson</h4>
+                                <h3 class="text-xl font-serif font-bold">Couscous Poisson</h3>
                                 <p class="text-[#8B6347] italic">Poisson du moment, légumes de saison, pois chiches, bouillon parfumé aux épices de l'atelier, Tfaya (confits d'oignons et raisins secs gourmands), (sauce piquant à la demande) et semoule vapeur parfumée au beurre.</p>
                             </div>
                         </div>
@@ -119,7 +134,7 @@
 
             <!-- ROTISSERIE TAB -->
             <div class="space-y-8 rounded-[32px] border border-[#F1D0A0] bg-[#E8C785] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
-                <h3 class="text-3xl font-serif font-bold text-center">Rôtisserie</h3>
+                <h2 class="text-3xl font-serif font-bold text-center">Rôtisserie</h2>
                 <div class="rounded-[32px] border border-[#F1D0A0] bg-[#FFF4D1] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                     <div id="tab-rotisserie" class="mb-8 flex flex-col gap-3 text-center">
                         <h3 class="text-2xl font-serif font-bold">Le Poulet Fermier Rôti</h3>
@@ -133,9 +148,9 @@
                                     <p class="text-[#8B6347] italic">Poulet fermier rôti mariné aux épices de l'atelier.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#C8531A] font-bold">19.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#C8531A] font-bold">22.00€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>XL</span><span class="text-[#C8531A] font-bold">25.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">19.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">22.00€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>XL</span><span class="text-[#A8421A] font-bold">25.90€</span></span>
                                 </div>
                             </div>
                         </div>
@@ -152,10 +167,10 @@
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left"><h4 class="text-xl font-serif font-bold">Pomme de Terre Grenaille</h4></div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>S</span><span class="text-[#C8531A] font-bold">4.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#C8531A] font-bold">6.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#C8531A] font-bold">9.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>XL</span><span class="text-[#C8531A] font-bold">12.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>S</span><span class="text-[#A8421A] font-bold">4.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">6.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">9.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>XL</span><span class="text-[#A8421A] font-bold">12.90€</span></span>
                                 </div>
                             </div>
                         </div>
@@ -163,10 +178,10 @@
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left"><h4 class="text-xl font-serif font-bold">Haricot Vert</h4></div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>S</span><span class="text-[#C8531A] font-bold">5.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#C8531A] font-bold">7.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#C8531A] font-bold">10.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>XL</span><span class="text-[#C8531A] font-bold">13.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>S</span><span class="text-[#A8421A] font-bold">5.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">7.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">10.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>XL</span><span class="text-[#A8421A] font-bold">13.90€</span></span>
                                 </div>
                             </div>
                         </div>
@@ -174,7 +189,7 @@
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left"><h4 class="text-xl font-serif font-bold">Gratin Dauphinois</h4></div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>La Part</span><span class="text-[#C8531A] font-bold">4.80€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>La Part</span><span class="text-[#A8421A] font-bold">4.80€</span></span>
                                 </div>
                             </div>
                         </div>
@@ -186,53 +201,53 @@
             <div class="space-y-8 rounded-[32px] border border-[#F1D0A0] bg-[#E8C785] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                 <div class="rounded-[32px] border border-[#F1D0A0] bg-[#FFF4D1] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                     <div id="tab-plats" class="mb-8 flex flex-col gap-3 text-center">
-                        <h3 class="text-3xl font-serif font-bold">Plats dans notre atelier</h3>
+                        <h2 class="text-3xl font-serif font-bold">Plats dans notre atelier</h2>
                         <p class="text-[#8B6347]">Disponible du Mercredi au Dimanche</p>
                     </div>
                     <div class="space-y-6">
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Le Bon Quart</h4>
+                                    <h3 class="text-xl font-serif font-bold">Le Bon Quart</h3>
                                     <p class="text-[#8B6347] italic">1/4 de poulet rôti fermier plus accompagnement pommes de terre grenailles.</p>
                                 </div>
-                                <span class="text-[#C8531A] font-bold">11.90€</span>
+                                <span class="text-[#A8421A] font-bold">11.90€</span>
                             </div>
                         </div>
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Le Bowl Crousty</h4>
+                                    <h3 class="text-xl font-serif font-bold">Le Bowl Crousty</h3>
                                     <p class="text-[#8B6347] italic">Poulet croustillant sur une base de riz thaï parfumée avec sauce maison. Topping au choix : teriyaki ou aigre douce, oignons frits, sésame, ciboulette, sauce spicy à la demande.</p>
                                 </div>
-                                <span class="text-[#C8531A] font-bold">11.90€</span>
+                                <span class="text-[#A8421A] font-bold">11.90€</span>
                             </div>
                         </div>
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Le Bowl Curry</h4>
+                                    <h3 class="text-xl font-serif font-bold">Le Bowl Curry</h3>
                                     <p class="text-[#8B6347] italic">Poulet Curry fondant et crémeux sur base de riz thaï parfumé.</p>
                                 </div>
-                                <span class="text-[#C8531A] font-bold">11.90€</span>
+                                <span class="text-[#A8421A] font-bold">11.90€</span>
                             </div>
                         </div>
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Le Crousty Burger</h4>
+                                    <h3 class="text-xl font-serif font-bold">Le Crousty Burger</h3>
                                     <p class="text-[#8B6347] italic">Pain brioché, poulet frit, cheddar fondant, salade, tomates, oignons frits, sauce maison.</p>
                                 </div>
-                                <span class="text-[#C8531A] font-bold">10.90€</span>
+                                <span class="text-[#A8421A] font-bold">10.90€</span>
                             </div>
                         </div>
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Le Menu Crousty Burger</h4>
+                                    <h3 class="text-xl font-serif font-bold">Le Menu Crousty Burger</h3>
                                     <p class="text-[#8B6347] italic">Pain brioché, poulet frit, cheddar fondant, salade, tomates, oignons frits, sauce maison. + Boisson & Frites</p>
                                 </div>
-                                <span class="text-[#C8531A] font-bold">14.90€</span>
+                                <span class="text-[#A8421A] font-bold">14.90€</span>
                             </div>
                         </div>
                     </div>
@@ -243,65 +258,65 @@
             <div class="space-y-8 rounded-[32px] border border-[#F1D0A0] bg-[#E8C785] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                 <div class="rounded-[32px] border border-[#F1D0A0] bg-[#FFF4D1] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                     <div id="tab-couscous" class="mb-8 flex flex-col gap-3 text-center">
-                        <h3 class="text-3xl font-serif font-bold">Couscous</h3>
+                        <h2 class="text-3xl font-serif font-bold">Couscous</h2>
                         <p class="text-[#8B6347]">Sur commande uniquement</p>
                     </div>
                     <div class="space-y-6">
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Couscous Royal</h4>
+                                    <h3 class="text-xl font-serif font-bold">Couscous Royal</h3>
                                     <p class="text-[#8B6347] italic">3 viandes : poulet fermier, merguez du boucher et agneau fondant. Légumes de saison, pois chiches, bouillons parfumés aux épices de l'atelier, Tfaya (confit d'oignons et raisins secs gourmands), sauce piquante à la demande et semoule vapeur parfumée au beurre.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>Taille Unique</span><span class="text-[#C8531A] font-bold">22.00€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>Taille Unique</span><span class="text-[#A8421A] font-bold">22.00€</span></span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Couscous Poisson</h4>
+                                    <h3 class="text-xl font-serif font-bold">Couscous Poisson</h3>
                                     <p class="text-[#8B6347] italic">Poisson de la mer, légumes de saison, pois chiches, bouillons parfumés aux épices de l'atelier, Tfaya, sauce piquante à la demande et semoule vapeur parfumée au beurre.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>Taille Unique</span><span class="text-[#C8531A] font-bold">19.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>Taille Unique</span><span class="text-[#A8421A] font-bold">19.90€</span></span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Couscous Poulet Fermier</h4>
+                                    <h3 class="text-xl font-serif font-bold">Couscous Poulet Fermier</h3>
                                     <p class="text-[#8B6347] italic">Poulet fermier, légumes de saison, pois chiches, bouillons parfumés aux épices de l'atelier, semoule fine légère cuite à la vapeur parfumée au beurre et aux épices douces.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#C8531A] font-bold">14.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#C8531A] font-bold">16.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">14.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">16.90€</span></span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Couscous Merguez du Boucher</h4>
+                                    <h3 class="text-xl font-serif font-bold">Couscous Merguez du Boucher</h3>
                                     <p class="text-[#8B6347] italic">Merguez du boucher, légumes de saison, pois chiches, bouillons parfumés aux épices de l'atelier, semoule fine légère cuite à la vapeur parfumée au beurre et aux épices douces.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#C8531A] font-bold">14.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#C8531A] font-bold">16.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">14.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">16.90€</span></span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Couscous Poulet Fermier & Merguez</h4>
+                                    <h3 class="text-xl font-serif font-bold">Couscous Poulet Fermier & Merguez</h3>
                                     <p class="text-[#8B6347] italic">Poulet fermier, merguez du boucher, légumes de saison, pois chiches, bouillons parfumés aux épices de l'atelier, semoule fine légère cuite à la vapeur parfumée au beurre et aux épices douces.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#C8531A] font-bold">16.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#C8531A] font-bold">18.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">16.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">18.90€</span></span>
                                 </div>
                             </div>
                         </div>
@@ -313,43 +328,43 @@
             <div class="space-y-8 rounded-[32px] border border-[#F1D0A0] bg-[#E8C785] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                 <div class="rounded-[32px] border border-[#F1D0A0] bg-[#FFF4D1] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                     <div id="tab-tajine" class="mb-8 flex flex-col gap-3 text-center">
-                        <h3 class="text-3xl font-serif font-bold">Tajine</h3>
+                        <h2 class="text-3xl font-serif font-bold">Tajine</h2>
                         <p class="text-[#8B6347]">Sur commande uniquement</p>
                     </div>
                     <div class="space-y-6">
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Tajine Poulet Fermier Olives</h4>
+                                    <h3 class="text-xl font-serif font-bold">Tajine Poulet Fermier Olives</h3>
                                     <p class="text-[#8B6347] italic">Poulet fermier cuit aux citrons confits, aromate, légumes, olive et semoule.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#C8531A] font-bold">14.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#C8531A] font-bold">17.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">14.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">17.90€</span></span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Tajine Poulet Fermier, Pruneaux & Olives</h4>
+                                    <h3 class="text-xl font-serif font-bold">Tajine Poulet Fermier, Pruneaux & Olives</h3>
                                     <p class="text-[#8B6347] italic">Poulet fermier cuit aux citrons confits, olives, pruneaux, amande et semoule.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#C8531A] font-bold">16.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#C8531A] font-bold">18.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">16.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">18.90€</span></span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-b border-[#E8D5C0] pb-6">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
-                                    <h4 class="text-xl font-serif font-bold">Tajine de Légumes</h4>
+                                    <h3 class="text-xl font-serif font-bold">Tajine de Légumes</h3>
                                     <p class="text-[#8B6347] italic">Légumes de saison aux citrons confits, aromates et semoule.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#C8531A] font-bold">12.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#C8531A] font-bold">15.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">12.90€</span></span>
+                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">15.90€</span></span>
                                 </div>
                             </div>
                         </div>
@@ -361,24 +376,39 @@
             <div class="space-y-8 rounded-[32px] border border-[#F1D0A0] bg-[#E8C785] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                 <div class="rounded-[32px] border border-[#F1D0A0] bg-[#FFF4D1] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                     <div id="tab-patisseries" class="mb-8 flex flex-col gap-3 text-center">
-                        <h3 class="text-3xl font-serif font-bold">Pâtisseries Artisanales</h3>
+                        <h2 class="text-3xl font-serif font-bold">Pâtisseries Artisanales</h2>
                         <p class="text-[#8B6347]">Douceurs & Créations maison</p>
                     </div>
                     <div class="space-y-6">
                         <div class="text-center py-12">
-                            <i class="fa-solid fa-cake-candles text-5xl text-[#E8D5C0] mb-6 block"></i>
-                            <h4 class="text-2xl font-serif font-bold mb-3">Venez découvrir sur place…</h4>
+                            <i class="fa-solid fa-cake-candles text-5xl text-[#E8D5C0] mb-6 block" aria-hidden="true"></i>
+                            <h3 class="text-2xl font-serif font-bold mb-3">Venez découvrir sur place…</h3>
                             <p class="text-[#8B6347] italic max-w-md mx-auto">Suivez-nous sur les réseaux sociaux pour ne rien manquer.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- INFORMATIONS CONSOMMATEURS -->
+            <aside class="rounded-2xl border border-[#E8D5C0] bg-white p-6 text-sm text-[#6B4226] leading-relaxed" aria-labelledby="infos-conso">
+                <h2 id="infos-conso" class="font-semibold text-[#1A0A00] text-base mb-2">
+                    <i class="fa-solid fa-circle-info mr-2 text-[#A8421A]" aria-hidden="true"></i>Informations consommateurs
+                </h2>
+                <ul class="space-y-1 list-disc pl-5">
+                    <li>Prix exprimés en euros, toutes taxes comprises (TTC).</li>
+                    <li>Allergènes : la liste des 14 allergènes majeurs présents dans chaque plat est disponible sur place et sur simple demande, au comptoir ou par téléphone au <a href="tel:+33665441306" class="underline text-[#A8421A]">06 65 44 13 06</a>.</li>
+                    <li>L'origine des viandes servies est affichée en boutique et communiquée sur demande.</li>
+                    <li>Carte et prix donnés à titre indicatif, susceptibles d'évoluer selon les saisons et les arrivages.</li>
+                </ul>
+            </aside>
+
         </div>
     </section>
 
     <!-- CTA Événementiel -->
     
+
+    </main>
 
     <!-- CONTACT -->
     <footer id="contact" class="bg-[#1A0A00] text-white py-16 md:py-24 px-6">
@@ -390,25 +420,25 @@
                     <p class="text-[#A8825F] mb-6 md:mb-10">Pour toute commande spéciale, notre équipe est à votre
                         écoute.</p>
                 </div>
-                <div class="space-y-4">
+                <address class="not-italic space-y-4">
                     <p class="text-[#C4A882]">
-                        <a href="https://maps.google.com/?q=133+rue+Maubec+Bayonne+64100" target="_blank"
-                            class="hover:text-[#C8531A] transition flex items-center gap-2">
-                            <i class="fa-solid fa-location-dot"></i> 133 rue Maubec, Bayonne 64100 – Pays Basque
+                        <a href="https://maps.google.com/?q=133+rue+Maubec+Bayonne+64100" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-[#E07820] transition flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i> 133 rue Maubec, 64100 Bayonne – Pays Basque<span class="sr-only"> (Google Maps, nouvel onglet)</span>
                         </a>
                     </p>
-                    <p class="text-[#C4A882] flex items-center gap-2"><a href="tel:+33665441306" class="hover:text-[#C8531A] transition">
-                            <i class="fa-solid fa-phone"></i> +33 06 65 44 13 06
+                    <p class="text-[#C4A882]"><a href="tel:+33665441306" class="hover:text-[#E07820] transition inline-flex items-center gap-2">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i> 06 65 44 13 06
                         </a></p>
-                    <p class="text-[#C4A882] flex items-center gap-2"><a href="mailto:adsbayonne@gmail.com" class="hover:text-[#C8531A] transition">
-                            <i class="fa-solid fa-envelope"></i> adsbayonne@gmail.com
+                    <p class="text-[#C4A882]"><a href="mailto:adsbayonne@gmail.com" class="hover:text-[#E07820] transition inline-flex items-center gap-2">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i> adsbayonne@gmail.com
                         </a></p>
-                </div>
+                </address>
                 <div class="mt-6 pt-6 border-t border-[#3A1A00]">
-                    <h3 class="text-lg font-serif mb-3 text-[#C8531A]"><i class="fa-regular fa-clock mr-2"></i>Horaires d'ouverture</h3>
+                    <h3 class="text-lg font-serif mb-3 text-[#E07820]"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>Horaires d'ouverture</h3>
                     <div class="space-y-1 text-[#C4A882] text-sm">
-                        <p><span class="text-white font-medium">Mer – Dim :</span> 9h30 – 15h00</p>
-                        <p><span class="text-white font-medium">Lun – Mar :</span> Fermé</p>
+                        <p><span class="text-white font-medium">Mercredi – Dimanche :</span> 9h30 – 15h00</p>
+                        <p><span class="text-white font-medium">Lundi – Mardi :</span> Fermé</p>
                     </div>
                 </div>
             </div>
@@ -419,18 +449,29 @@
                     <p class="text-[#A8825F] text-sm">Actualités, plats du jour et offres spéciales</p>
                 </div>
                 <div class="flex gap-4 mt-4 justify-start md:justify-end">
-                    <a href="https://www.facebook.com/profile.php?id=100063556803206" target="_blank"
-                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-[#C8531A] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
-                        <i class="fa-brands fa-facebook text-xl"></i>
-                        <span class="text-sm font-medium">Facebook</span>
+                    <a href="https://www.facebook.com/profile.php?id=100063556803206" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-[#B34A17] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
+                        <i class="fa-brands fa-facebook text-xl" aria-hidden="true"></i>
+                        <span class="text-sm font-medium">Facebook</span><span class="sr-only"> (nouvel onglet)</span>
                     </a>
-                    <a href="https://www.instagram.com/latelier.des.saveurs/" target="_blank"
-                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-gradient-to-r hover:from-[#833ab4] hover:to-[#fd1d1d] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
-                        <i class="fa-brands fa-instagram text-xl"></i>
-                        <span class="text-sm font-medium">Instagram</span>
+                    <a href="https://www.instagram.com/latelier.des.saveurs/" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-gradient-to-r hover:from-[#833ab4] hover:to-[#c1121f] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
+                        <i class="fa-brands fa-instagram text-xl" aria-hidden="true"></i>
+                        <span class="text-sm font-medium">Instagram</span><span class="sr-only"> (nouvel onglet)</span>
                     </a>
                 </div>
             </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-[#3A1A00] flex flex-col md:flex-row gap-4 justify-between text-sm text-[#A8825F]">
+            <p>&copy; 2026 L'Atelier des Saveurs – Bayonne</p>
+            <nav aria-label="Informations légales">
+                <ul class="flex flex-wrap gap-x-6 gap-y-2">
+                    <li><a href="mentions-legales.html" class="footer-link">Mentions légales &amp; CGU</a></li>
+                    <li><a href="politique-de-confidentialite.html" class="footer-link">Politique de confidentialité</a></li>
+                    <li><a href="politique-cookies.html" class="footer-link">Politique de cookies</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
 

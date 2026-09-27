@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Lisez les avis de nos clients satisfaits et découvrez pourquoi L'Atelier des Saveurs est votre destination de prédilection à Bayonne.">
     <title>L'Atelier des Saveurs | Avis Client</title>
+    <link rel="canonical" href="https://latelierdessaveurs-bayonne.fr/avis.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="L'Atelier des Saveurs">
+    <meta property="og:title" content="L'Atelier des Saveurs | Avis Client">
+    <meta property="og:description" content="Lisez les avis de nos clients satisfaits et découvrez pourquoi L'Atelier des Saveurs est votre destination de prédilection à Bayonne.">
+    <meta property="og:url" content="https://latelierdessaveurs-bayonne.fr/avis.html">
+    <meta property="og:image" content="https://latelierdessaveurs-bayonne.fr/image/poulet_pdt.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
@@ -19,12 +28,15 @@
 
 <body class="bg-[#1A0A00] text-white">
 
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+
     <!-- NAVBAR -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-white">
+    <header>
+    <nav id="navbar" aria-label="Navigation principale" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-white">
         <div class="flex items-center gap-4">
-            <a href="index.html" class="flex items-center gap-4">
-                <img src="image/logo.png" alt="Logo L'Atelier des Saveurs" class="h-12 w-auto object-contain">
-                <div class="text-2xl font-bold tracking-widest uppercase font-serif hidden sm:block">L'Atelier des Saveurs</div>
+            <a href="index.html" class="flex items-center gap-4" aria-label="L'Atelier des Saveurs – Accueil">
+                <img src="image/logo.png" alt="" width="150" height="150" class="h-12 w-auto object-contain">
+                <div class="text-2xl font-bold tracking-widest uppercase font-serif hidden sm:block" aria-hidden="true">L'Atelier des Saveurs</div>
             </a>
         </div>
         <div class="hidden md:flex space-x-10 items-center text-sm uppercase tracking-widest font-medium">
@@ -32,81 +44,89 @@
             <a href="carte.html" class="nav-link">La Carte</a>
             <a href="evenementiel.html" class="nav-link">Événements</a>
             <a href="cheffe.html" class="nav-link">La Cheffe</a>
-            <a href="avis.html" class="nav-link">Avis</a>
-            <a href="evenementiel.html" class="bg-[#C8531A] hover:bg-[#A8421A] px-6 py-2 transition-colors">Contact</a>
+            <a href="avis.html" class="nav-link" aria-current="page">Avis</a>
+            <a href="evenementiel.html#demande" class="btn-nav">Contact</a>
         </div>
-        <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+        <button id="menu-btn" type="button" class="md:hidden text-3xl" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu"><span aria-hidden="true">☰</span></button>
     </nav>
+    </header>
 
     <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#1A0A00] z-[60] flex flex-col items-center justify-center space-y-8 text-xl text-white transition-transform duration-500 translate-x-full">
-        <button id="close-btn" class="absolute top-8 right-8 text-4xl">&times;</button>
+    <nav id="mobile-menu" aria-label="Menu mobile" aria-hidden="true" inert class="fixed inset-0 bg-[#1A0A00] z-[60] flex flex-col items-center justify-center space-y-8 text-xl text-white transition-transform duration-500 translate-x-full">
+        <button id="close-btn" type="button" class="absolute top-8 right-8 text-4xl" aria-label="Fermer le menu"><span aria-hidden="true">&times;</span></button>
         <a href="index.html" class="m-link">Accueil</a>
         <a href="carte.html" class="m-link">La Carte</a>
         <a href="evenementiel.html" class="m-link">Événements</a>
         <a href="cheffe.html" class="m-link">La Cheffe</a>
-        <a href="avis.html" class="m-link">Avis</a>
-        <a href="evenementiel.html" class="bg-[#C8531A] px-10 py-3 m-link">Contact</a>
-    </div>
+        <a href="avis.html" class="m-link" aria-current="page">Avis</a>
+        <a href="evenementiel.html#demande" class="bg-[#B34A17] px-10 py-3 m-link">Contact</a>
+    </nav>
+
+    <main id="contenu" tabindex="-1">
 
     <section class="pt-40 pb-20 text-center section-gradient">
         <h1 class="text-5xl font-serif mb-4">Vos Expériences</h1>
-        <div class="flex justify-center gap-1 text-[#E07820] mb-6 text-2xl">
-            <p class="text-[#C4A882] italic text-lg mb-8 mr-4 text-white">4.3/5 Avis Google</p>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
+        <div class="flex justify-center items-center gap-1 text-[#E07820] mb-6 text-2xl">
+            <p class="italic text-lg mr-4 text-white">Note moyenne : 4,3/5 sur Google</p>
+            <span class="flex gap-1" aria-hidden="true">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </span>
         </div>
+        <h2 class="sr-only">Avis de nos clients</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12 px-6 max-w-7xl mx-auto">
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-[#F0E4D4] space-y-4">
-                <div class="flex text-[#E07820] gap-1 text-sm">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <article class="bg-white p-8 rounded-xl shadow-sm border border-[#F0E4D4] space-y-4">
+                <div class="flex text-[#E07820] gap-1 text-sm" role="img" aria-label="Note : 5 sur 5">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i
+                        class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
                 </div>
-                <p class="text-[#6B4226] italic">"Ce lieu nous avait manqué ! Ouvert le dimanche pour le magnifique poulet fermier rôti ! On se régale à coup sûr !"</p>
+                <blockquote class="text-[#6B4226] italic"><p>« Ce lieu nous avait manqué ! Ouvert le dimanche pour le magnifique poulet fermier rôti ! On se régale à coup sûr ! »</p></blockquote>
                 <div class="flex items-center gap-4 pt-4 border-t border-[#F8F0E8]">
                     <div
-                        class="w-10 h-10 bg-[#FDE8D4] rounded-full flex items-center justify-center text-[#C8531A] font-bold">
+                        class="w-10 h-10 bg-[#FDE8D4] rounded-full flex items-center justify-center text-[#A8421A] font-bold" aria-hidden="true">
                         A</div>
-                    <span class="font-medium">Amélie M.</span>
+                    <span class="font-medium text-[#1A0A00]">Amélie M.</span>
                 </div>
-            </div>
+            </article>
 
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-[#F0E4D4] space-y-4">
-                <div class="flex text-[#E07820] gap-1 text-sm">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <article class="bg-white p-8 rounded-xl shadow-sm border border-[#F0E4D4] space-y-4">
+                <div class="flex text-[#E07820] gap-1 text-sm" role="img" aria-label="Note : 5 sur 5">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i
+                        class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
                 </div>
-                <p class="text-[#6B4226] italic">"Un poulet fermier de grande qualité, des plats cuisinés, du fait maison comme j'aime. Que dire je recommande vivement, car de nos jours on trouve que du surgelé insipide et à des prix très élevés.... Merci l atelier des saveurs."</p>
+                <blockquote class="text-[#6B4226] italic"><p>« Un poulet fermier de grande qualité, des plats cuisinés, du fait maison comme j'aime. Que dire je recommande vivement, car de nos jours on trouve que du surgelé insipide et à des prix très élevés.... Merci l atelier des saveurs. »</p></blockquote>
                 <div class="flex items-center gap-4 pt-4 border-t border-[#F8F0E8]">
                     <div
-                        class="w-10 h-10 bg-[#FDE8D4] rounded-full flex items-center justify-center text-[#C8531A] font-bold">
+                        class="w-10 h-10 bg-[#FDE8D4] rounded-full flex items-center justify-center text-[#A8421A] font-bold" aria-hidden="true">
                         H</div>
-                    <span class="font-medium">Hamid Z.</span>
+                    <span class="font-medium text-[#1A0A00]">Hamid Z.</span>
                 </div>
-            </div>
+            </article>
 
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-[#F0E4D4] space-y-4">
-                <div class="flex text-[#E07820] gap-1 text-sm">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                        class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+            <article class="bg-white p-8 rounded-xl shadow-sm border border-[#F0E4D4] space-y-4">
+                <div class="flex text-[#E07820] gap-1 text-sm" role="img" aria-label="Note : 4 sur 5">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i
+                        class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-regular fa-star" aria-hidden="true"></i>
                 </div>
-                <p class="text-[#6B4226] italic">"J'ai pris ce midi un couscous au poulet, poulet fermier délicieux qui me donne envie d'y retourner chercher un poulet rôti Fermier. Le couscous excellent."</p>
+                <blockquote class="text-[#6B4226] italic"><p>« J'ai pris ce midi un couscous au poulet, poulet fermier délicieux qui me donne envie d'y retourner chercher un poulet rôti Fermier. Le couscous excellent. »</p></blockquote>
                 <div class="flex items-center gap-4 pt-4 border-t border-[#F8F0E8]">
                     <div
-                        class="w-10 h-10 bg-[#FDE8D4] rounded-full flex items-center justify-center text-[#C8531A] font-bold">
+                        class="w-10 h-10 bg-[#FDE8D4] rounded-full flex items-center justify-center text-[#A8421A] font-bold" aria-hidden="true">
                         A</div>
-                    <span class="font-medium">Anne H.</span>
+                    <span class="font-medium text-[#1A0A00]">Anne H.</span>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 
 
 
 
+
+    </main>
 
     <!-- CONTACT -->
     <footer id="contact" class="bg-[#1A0A00] text-white py-16 md:py-24 px-6">
@@ -118,25 +138,25 @@
                     <p class="text-[#A8825F] mb-6 md:mb-10">Pour toute commande spéciale, notre équipe est à votre
                         écoute.</p>
                 </div>
-                <div class="space-y-4">
+                <address class="not-italic space-y-4">
                     <p class="text-[#C4A882]">
-                        <a href="https://maps.google.com/?q=133+rue+Maubec+Bayonne+64100" target="_blank"
-                            class="hover:text-[#C8531A] transition flex items-center gap-2">
-                            <i class="fa-solid fa-location-dot"></i> 133 rue Maubec, Bayonne 64100 – Pays Basque
+                        <a href="https://maps.google.com/?q=133+rue+Maubec+Bayonne+64100" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-[#E07820] transition flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i> 133 rue Maubec, 64100 Bayonne – Pays Basque<span class="sr-only"> (Google Maps, nouvel onglet)</span>
                         </a>
                     </p>
-                    <p class="text-[#C4A882] flex items-center gap-2"><a href="tel:+33665441306" class="hover:text-[#C8531A] transition">
-                            <i class="fa-solid fa-phone"></i> +33 06 65 44 13 06
+                    <p class="text-[#C4A882]"><a href="tel:+33665441306" class="hover:text-[#E07820] transition inline-flex items-center gap-2">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i> 06 65 44 13 06
                         </a></p>
-                    <p class="text-[#C4A882] flex items-center gap-2"><a href="mailto:adsbayonne@gmail.com" class="hover:text-[#C8531A] transition">
-                            <i class="fa-solid fa-envelope"></i> adsbayonne@gmail.com
+                    <p class="text-[#C4A882]"><a href="mailto:adsbayonne@gmail.com" class="hover:text-[#E07820] transition inline-flex items-center gap-2">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i> adsbayonne@gmail.com
                         </a></p>
-                </div>
+                </address>
                 <div class="mt-6 pt-6 border-t border-[#3A1A00]">
-                    <h3 class="text-lg font-serif mb-3 text-[#C8531A]"><i class="fa-regular fa-clock mr-2"></i>Horaires d'ouverture</h3>
+                    <h3 class="text-lg font-serif mb-3 text-[#E07820]"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>Horaires d'ouverture</h3>
                     <div class="space-y-1 text-[#C4A882] text-sm">
-                        <p><span class="text-white font-medium">Mer – Dim :</span> 9h30 – 15h00</p>
-                        <p><span class="text-white font-medium">Lun – Mar :</span> Fermé</p>
+                        <p><span class="text-white font-medium">Mercredi – Dimanche :</span> 9h30 – 15h00</p>
+                        <p><span class="text-white font-medium">Lundi – Mardi :</span> Fermé</p>
                     </div>
                 </div>
             </div>
@@ -147,18 +167,29 @@
                     <p class="text-[#A8825F] text-sm">Actualités, plats du jour et offres spéciales</p>
                 </div>
                 <div class="flex gap-4 mt-4 justify-start md:justify-end">
-                    <a href="https://www.facebook.com/profile.php?id=100063556803206" target="_blank"
-                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-[#C8531A] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
-                        <i class="fa-brands fa-facebook text-xl"></i>
-                        <span class="text-sm font-medium">Facebook</span>
+                    <a href="https://www.facebook.com/profile.php?id=100063556803206" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-[#B34A17] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
+                        <i class="fa-brands fa-facebook text-xl" aria-hidden="true"></i>
+                        <span class="text-sm font-medium">Facebook</span><span class="sr-only"> (nouvel onglet)</span>
                     </a>
-                    <a href="https://www.instagram.com/latelier.des.saveurs/" target="_blank"
-                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-gradient-to-r hover:from-[#833ab4] hover:to-[#fd1d1d] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
-                        <i class="fa-brands fa-instagram text-xl"></i>
-                        <span class="text-sm font-medium">Instagram</span>
+                    <a href="https://www.instagram.com/latelier.des.saveurs/" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-gradient-to-r hover:from-[#833ab4] hover:to-[#c1121f] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
+                        <i class="fa-brands fa-instagram text-xl" aria-hidden="true"></i>
+                        <span class="text-sm font-medium">Instagram</span><span class="sr-only"> (nouvel onglet)</span>
                     </a>
                 </div>
             </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-[#3A1A00] flex flex-col md:flex-row gap-4 justify-between text-sm text-[#A8825F]">
+            <p>&copy; 2026 L'Atelier des Saveurs – Bayonne</p>
+            <nav aria-label="Informations légales">
+                <ul class="flex flex-wrap gap-x-6 gap-y-2">
+                    <li><a href="mentions-legales.html" class="footer-link">Mentions légales &amp; CGU</a></li>
+                    <li><a href="politique-de-confidentialite.html" class="footer-link">Politique de confidentialité</a></li>
+                    <li><a href="politique-cookies.html" class="footer-link">Politique de cookies</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
 

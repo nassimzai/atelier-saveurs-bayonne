@@ -14,18 +14,30 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 2. Mobile Menu Toggle
+// 2. Mobile Menu Toggle (inert quand fermé : ses liens ne sont pas atteignables au clavier)
 menuBtn.addEventListener('click', () => {
     mobileMenu.classList.add('open');
+    mobileMenu.inert = false;
+    mobileMenu.removeAttribute('aria-hidden');
+    menuBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    closeBtn.focus();
 });
 
 const closeMenu = () => {
+    if (!mobileMenu.classList.contains('open')) return;
     mobileMenu.classList.remove('open');
+    mobileMenu.inert = true;
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    menuBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = 'auto';
+    menuBtn.focus();
 };
 
 closeBtn.addEventListener('click', closeMenu);
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+});
 
 // Fermer le menu si on clique sur un lien (très important pour le responsive)
 document.querySelectorAll('.m-link').forEach(link => {
@@ -52,8 +64,12 @@ document.querySelectorAll('.service-item, .product-card').forEach(el => {
 const tabLinks = document.querySelectorAll('.sticky-tabs a[href^="#tab-"]');
 const activateTabLink = (link) => {
     if (!link) return;
-    tabLinks.forEach(l => l.classList.remove('active'));
+    tabLinks.forEach(l => {
+        l.classList.remove('active');
+        l.removeAttribute('aria-current');
+    });
     link.classList.add('active');
+    link.setAttribute('aria-current', 'true');
     link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 };
 

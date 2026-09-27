@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="L'Atelier des Saveurs propose ses services traiteur pour tous vos événements à Bayonne : mariages, anniversaires, réceptions professionnelles.">
     <title>L'Atelier des Saveurs | Événementiel & Traiteur</title>
+    <link rel="canonical" href="https://latelierdessaveurs-bayonne.fr/evenementiel.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="L'Atelier des Saveurs">
+    <meta property="og:title" content="L'Atelier des Saveurs | Événementiel & Traiteur">
+    <meta property="og:description" content="L'Atelier des Saveurs propose ses services traiteur pour tous vos événements à Bayonne : mariages, anniversaires, réceptions professionnelles.">
+    <meta property="og:url" content="https://latelierdessaveurs-bayonne.fr/evenementiel.html">
+    <meta property="og:image" content="https://latelierdessaveurs-bayonne.fr/image/poulet_pdt.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -27,46 +36,53 @@
             font-size: 0.95rem;
         }
         .form-field:focus { border-color: #C8531A; }
-        .form-field::placeholder { color: #B89880; }
+        .form-field::placeholder { color: #8B6347; }
+        .form-field[aria-invalid="true"] { border-color: #B91C1C; }
     </style>
 </head>
 
 <body class="bg-[#1A0A00] text-white">
 
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+
     <!-- NAVBAR -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-white">
+    <header>
+    <nav id="navbar" aria-label="Navigation principale" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-white">
         <div class="flex items-center gap-4">
-            <a href="index.html" class="flex items-center gap-4">
-                <img src="image/logo.png" alt="Logo L'Atelier des Saveurs" class="h-12 w-auto object-contain">
-                <div class="text-2xl font-bold tracking-widest uppercase font-serif hidden sm:block">L'Atelier des Saveurs</div>
+            <a href="index.html" class="flex items-center gap-4" aria-label="L'Atelier des Saveurs – Accueil">
+                <img src="image/logo.png" alt="" width="150" height="150" class="h-12 w-auto object-contain">
+                <div class="text-2xl font-bold tracking-widest uppercase font-serif hidden sm:block" aria-hidden="true">L'Atelier des Saveurs</div>
             </a>
         </div>
         <div class="hidden md:flex space-x-10 items-center text-sm uppercase tracking-widest font-medium">
             <a href="index.html" class="nav-link">Accueil</a>
             <a href="carte.html" class="nav-link">La Carte</a>
-            <a href="evenementiel.html" class="nav-link">Événements</a>
+            <a href="evenementiel.html" class="nav-link" aria-current="page">Événements</a>
             <a href="cheffe.html" class="nav-link">La Cheffe</a>
             <a href="avis.html" class="nav-link">Avis</a>
-            <a href="evenementiel.html" class="bg-[#C8531A] hover:bg-[#A8421A] px-6 py-2 transition-colors">Contact</a>
+            <a href="evenementiel.html#demande" class="btn-nav">Contact</a>
         </div>
-        <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+        <button id="menu-btn" type="button" class="md:hidden text-3xl" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu"><span aria-hidden="true">☰</span></button>
     </nav>
+    </header>
 
     <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#1A0A00] z-[60] flex flex-col items-center justify-center space-y-8 text-xl text-white transition-transform duration-500 translate-x-full">
-        <button id="close-btn" class="absolute top-8 right-8 text-4xl">&times;</button>
+    <nav id="mobile-menu" aria-label="Menu mobile" aria-hidden="true" inert class="fixed inset-0 bg-[#1A0A00] z-[60] flex flex-col items-center justify-center space-y-8 text-xl text-white transition-transform duration-500 translate-x-full">
+        <button id="close-btn" type="button" class="absolute top-8 right-8 text-4xl" aria-label="Fermer le menu"><span aria-hidden="true">&times;</span></button>
         <a href="index.html" class="m-link">Accueil</a>
         <a href="carte.html" class="m-link">La Carte</a>
-        <a href="evenementiel.html" class="m-link">Événements</a>
+        <a href="evenementiel.html" class="m-link" aria-current="page">Événements</a>
         <a href="cheffe.html" class="m-link">La Cheffe</a>
         <a href="avis.html" class="m-link">Avis</a>
-        <a href="evenementiel.html" class="bg-[#C8531A] px-10 py-3 m-link">Contact</a>
-    </div>
+        <a href="evenementiel.html#demande" class="bg-[#B34A17] px-10 py-3 m-link">Contact</a>
+    </nav>
+
+    <main id="contenu" tabindex="-1">
 
     <!-- HERO -->
     <section class="pt-40 pb-20 bg-[#1A0A00] text-center text-white section-gradient">
         <h1 class="text-5xl md:text-7xl font-serif mb-4">Événementiel</h1>
-        <p class="text-[#C8531A] uppercase tracking-widest text-sm">Traiteur sur mesure pour vos réceptions</p>
+        <p class="text-[#FFE3C2] uppercase tracking-widest text-sm">Traiteur sur mesure pour vos réceptions</p>
     </section>
 
     <!-- PRESENTATION + FORM -->
@@ -79,61 +95,76 @@
                     L'Atelier des Saveurs propose ses services pour vos événements privés et professionnels : mariages, anniversaires, baptêmes, séminaires… Chaque prestation est préparée avec soin, avec des produits frais et des recettes authentiques.
                 </p>
                 <div class="flex flex-wrap justify-center gap-6 text-sm text-[#8B6347]">
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C8531A]"></i> Couscous & Tajines</span>
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C8531A]"></i> Rôtisserie fermière</span>
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C8531A]"></i> Formules sur mesure</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C8531A]" aria-hidden="true"></i> Couscous & Tajines</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C8531A]" aria-hidden="true"></i> Rôtisserie fermière</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C8531A]" aria-hidden="true"></i> Formules sur mesure</span>
                 </div>
             </div>
 
             <!-- Formulaire -->
-            <div class="rounded-[28px] border border-[#F1D0A0] bg-[#FFF4D1] p-8 md:p-10 shadow-[0_20px_60px_rgba(26,10,0,0.10)]">
-                <h2 class="text-2xl font-serif font-bold text-[#1A0A00] mb-8 text-center">Faites-nous part de votre demande</h2>
+            <div id="demande" class="scroll-mt-28 rounded-[28px] border border-[#F1D0A0] bg-[#FFF4D1] p-8 md:p-10 shadow-[0_20px_60px_rgba(26,10,0,0.10)]">
+                <h2 id="form-titre" class="text-2xl font-serif font-bold text-[#1A0A00] mb-3 text-center">Faites-nous part de votre demande</h2>
+                <p class="text-sm text-[#6B4226] text-center mb-8">Les champs marqués d'un astérisque (<span aria-hidden="true">*</span><span class="sr-only">astérisque</span>) sont obligatoires.</p>
 
-                <div class="space-y-5">
+                <form id="event-form" class="space-y-5" aria-labelledby="form-titre" novalidate>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Nom *</label>
-                            <input type="text" id="nom" class="form-field" placeholder="Votre nom">
+                            <label for="nom" class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Nom <span aria-hidden="true">*</span></label>
+                            <input type="text" id="nom" name="nom" class="form-field" placeholder="Votre nom" autocomplete="family-name" required maxlength="80">
                         </div>
                         <div>
-                            <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Prénom *</label>
-                            <input type="text" id="prenom" class="form-field" placeholder="Votre prénom">
+                            <label for="prenom" class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Prénom <span aria-hidden="true">*</span></label>
+                            <input type="text" id="prenom" name="prenom" class="form-field" placeholder="Votre prénom" autocomplete="given-name" required maxlength="80">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Téléphone *</label>
-                            <input type="tel" id="telephone" class="form-field" placeholder="Ex : 06 12 34 56 78">
+                            <label for="telephone" class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Téléphone <span aria-hidden="true">*</span></label>
+                            <input type="tel" id="telephone" name="telephone" class="form-field" placeholder="Ex : 06 12 34 56 78" autocomplete="tel" inputmode="tel" required maxlength="20">
                         </div>
                         <div>
-                            <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Email *</label>
-                            <input type="email" id="email" class="form-field" placeholder="votre@email.com">
+                            <label for="email" class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Email <span aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" class="form-field" placeholder="votre@email.com" autocomplete="email" required maxlength="120">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Sujet de la demande *</label>
-                        <input type="text" id="sujet" class="form-field" placeholder="Ex : Mariage, anniversaire, buffet d'entreprise…">
+                        <label for="sujet" class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Sujet de la demande <span aria-hidden="true">*</span></label>
+                        <input type="text" id="sujet" name="sujet" class="form-field" placeholder="Ex : Mariage, anniversaire, buffet d'entreprise…" required maxlength="120">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Description de la demande *</label>
-                        <textarea id="description" rows="5" class="form-field resize-none" placeholder="Décrivez votre événement : date, nombre de personnes, plats souhaités, lieu…"></textarea>
+                        <label for="description" class="block text-xs font-medium text-[#6B4226] uppercase tracking-wider mb-2">Description de la demande <span aria-hidden="true">*</span></label>
+                        <textarea id="description" name="description" rows="5" class="form-field resize-none" required maxlength="2000" aria-describedby="description-aide" placeholder="Décrivez votre événement : date, nombre de personnes, plats souhaités, lieu…"></textarea>
+                        <p id="description-aide" class="mt-2 text-xs text-[#6B4226]">Indiquez uniquement les informations utiles à votre devis : date, nombre de convives, lieu, plats souhaités et, si nécessaire, les allergies à prendre en compte.</p>
                     </div>
 
-                    <div id="form-error" class="hidden text-red-700 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-3">
-                        <i class="fa-solid fa-circle-exclamation mr-2"></i>Veuillez remplir tous les champs obligatoires.
+                    <div class="flex items-start gap-3">
+                        <input type="checkbox" id="consentement" name="consentement" required
+                            class="mt-1 h-5 w-5 shrink-0 accent-[#B34A17] cursor-pointer">
+                        <label for="consentement" class="text-sm text-[#3D2210] leading-relaxed cursor-pointer">
+                            J'accepte que les informations saisies soient utilisées par L'Atelier des Saveurs pour répondre à ma demande et établir un devis. <span aria-hidden="true">*</span>
+                        </label>
                     </div>
 
-                    <button id="submit-btn" class="w-full bg-[#C8531A] hover:bg-[#A8421A] text-white py-4 font-medium uppercase tracking-widest text-sm transition-colors rounded-md flex items-center justify-center gap-3">
-                        <i class="fa-solid fa-paper-plane"></i> Envoyer ma demande
+                    <div id="form-error" class="hidden text-red-800 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-3" role="alert"></div>
+                    <p id="form-status" class="sr-only" role="status" aria-live="polite"></p>
+
+                    <button type="submit" id="submit-btn" class="w-full bg-[#B34A17] hover:bg-[#943A12] text-white py-4 font-medium uppercase tracking-widest text-sm transition-colors rounded-md flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Envoyer ma demande
                     </button>
-                </div>
+
+                    <p class="text-xs text-[#6B4226] leading-relaxed pt-4 border-t border-[#F1D0A0]">
+                        <strong>Protection de vos données :</strong> les informations recueillies sont traitées par L'Atelier des Saveurs, responsable du traitement, dans le seul but de répondre à votre demande de prestation. Elles nous sont transmises par e-mail via notre prestataire EmailJS, ne sont ni cédées ni utilisées à des fins publicitaires, et sont conservées au maximum 3 ans après notre dernier échange. Vous pouvez à tout moment exercer vos droits d'accès, de rectification, d'effacement et d'opposition en écrivant à <a href="mailto:adsbayonne@gmail.com" class="underline text-[#A8421A]">adsbayonne@gmail.com</a>. Pour en savoir plus, consultez notre <a href="politique-de-confidentialite.html" class="underline text-[#A8421A]">politique de confidentialité</a>.
+                    </p>
+                </form>
             </div>
 
         </div>
     </section>
+
+    </main>
 
     <!-- CONTACT -->
     <footer id="contact" class="bg-[#1A0A00] text-white py-16 md:py-24 px-6">
@@ -145,25 +176,25 @@
                     <p class="text-[#A8825F] mb-6 md:mb-10">Pour toute commande spéciale, notre équipe est à votre
                         écoute.</p>
                 </div>
-                <div class="space-y-4">
+                <address class="not-italic space-y-4">
                     <p class="text-[#C4A882]">
-                        <a href="https://maps.google.com/?q=133+rue+Maubec+Bayonne+64100" target="_blank"
-                            class="hover:text-[#C8531A] transition flex items-center gap-2">
-                            <i class="fa-solid fa-location-dot"></i> 133 rue Maubec, Bayonne 64100 – Pays Basque
+                        <a href="https://maps.google.com/?q=133+rue+Maubec+Bayonne+64100" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-[#E07820] transition flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i> 133 rue Maubec, 64100 Bayonne – Pays Basque<span class="sr-only"> (Google Maps, nouvel onglet)</span>
                         </a>
                     </p>
-                    <p class="text-[#C4A882] flex items-center gap-2"><a href="tel:+33665441306" class="hover:text-[#C8531A] transition">
-                            <i class="fa-solid fa-phone"></i> +33 06 65 44 13 06
+                    <p class="text-[#C4A882]"><a href="tel:+33665441306" class="hover:text-[#E07820] transition inline-flex items-center gap-2">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i> 06 65 44 13 06
                         </a></p>
-                    <p class="text-[#C4A882] flex items-center gap-2"><a href="mailto:adsbayonne@gmail.com" class="hover:text-[#C8531A] transition">
-                            <i class="fa-solid fa-envelope"></i> adsbayonne@gmail.com
+                    <p class="text-[#C4A882]"><a href="mailto:adsbayonne@gmail.com" class="hover:text-[#E07820] transition inline-flex items-center gap-2">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i> adsbayonne@gmail.com
                         </a></p>
-                </div>
+                </address>
                 <div class="mt-6 pt-6 border-t border-[#3A1A00]">
-                    <h3 class="text-lg font-serif mb-3 text-[#C8531A]"><i class="fa-regular fa-clock mr-2"></i>Horaires d'ouverture</h3>
+                    <h3 class="text-lg font-serif mb-3 text-[#E07820]"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>Horaires d'ouverture</h3>
                     <div class="space-y-1 text-[#C4A882] text-sm">
-                        <p><span class="text-white font-medium">Mer – Dim :</span> 9h30 – 15h00</p>
-                        <p><span class="text-white font-medium">Lun – Mar :</span> Fermé</p>
+                        <p><span class="text-white font-medium">Mercredi – Dimanche :</span> 9h30 – 15h00</p>
+                        <p><span class="text-white font-medium">Lundi – Mardi :</span> Fermé</p>
                     </div>
                 </div>
             </div>
@@ -174,18 +205,29 @@
                     <p class="text-[#A8825F] text-sm">Actualités, plats du jour et offres spéciales</p>
                 </div>
                 <div class="flex gap-4 mt-4 justify-start md:justify-end">
-                    <a href="https://www.facebook.com/profile.php?id=100063556803206" target="_blank"
-                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-[#C8531A] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
-                        <i class="fa-brands fa-facebook text-xl"></i>
-                        <span class="text-sm font-medium">Facebook</span>
+                    <a href="https://www.facebook.com/profile.php?id=100063556803206" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-[#B34A17] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
+                        <i class="fa-brands fa-facebook text-xl" aria-hidden="true"></i>
+                        <span class="text-sm font-medium">Facebook</span><span class="sr-only"> (nouvel onglet)</span>
                     </a>
-                    <a href="https://www.instagram.com/latelier.des.saveurs/" target="_blank"
-                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-gradient-to-r hover:from-[#833ab4] hover:to-[#fd1d1d] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
-                        <i class="fa-brands fa-instagram text-xl"></i>
-                        <span class="text-sm font-medium">Instagram</span>
+                    <a href="https://www.instagram.com/latelier.des.saveurs/" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-[#2A1000] hover:bg-gradient-to-r hover:from-[#833ab4] hover:to-[#c1121f] text-[#C4A882] hover:text-white transition px-4 py-3 rounded-lg">
+                        <i class="fa-brands fa-instagram text-xl" aria-hidden="true"></i>
+                        <span class="text-sm font-medium">Instagram</span><span class="sr-only"> (nouvel onglet)</span>
                     </a>
                 </div>
             </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-[#3A1A00] flex flex-col md:flex-row gap-4 justify-between text-sm text-[#A8825F]">
+            <p>&copy; 2026 L'Atelier des Saveurs – Bayonne</p>
+            <nav aria-label="Informations légales">
+                <ul class="flex flex-wrap gap-x-6 gap-y-2">
+                    <li><a href="mentions-legales.html" class="footer-link">Mentions légales &amp; CGU</a></li>
+                    <li><a href="politique-de-confidentialite.html" class="footer-link">Politique de confidentialité</a></li>
+                    <li><a href="politique-cookies.html" class="footer-link">Politique de cookies</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
 
@@ -194,49 +236,67 @@
     <script>
         // Erreur corriger car l'envoi de mail est restraint à mon repo GitHub.
         // Ceux ne sont que des public keys, donc pas de soucis de sécurité.
-        const EMAILJS_PUBLIC_KEY  = 'kGYfm9I7w-Q7mHV4m';   
-        const EMAILJS_SERVICE_ID  = 'service_v6bueaq';   
-        const EMAILJS_TEMPLATE_ID = 'template_rra6ab8';  
+        const EMAILJS_PUBLIC_KEY  = 'kGYfm9I7w-Q7mHV4m';
+        const EMAILJS_SERVICE_ID  = 'service_v6bueaq';
+        const EMAILJS_TEMPLATE_ID = 'template_rra6ab8';
 
         emailjs.init(EMAILJS_PUBLIC_KEY);
 
-        document.getElementById('submit-btn').addEventListener('click', () => {
-            const nom         = document.getElementById('nom').value.trim();
-            const prenom      = document.getElementById('prenom').value.trim();
-            const telephone   = document.getElementById('telephone').value.trim();
-            const email       = document.getElementById('email').value.trim();
-            const sujet       = document.getElementById('sujet').value.trim();
-            const description = document.getElementById('description').value.trim();
-            const errorDiv    = document.getElementById('form-error');
-            const btn         = document.getElementById('submit-btn');
+        const form      = document.getElementById('event-form');
+        const errorDiv  = document.getElementById('form-error');
+        const statusMsg = document.getElementById('form-status');
+        const btn       = document.getElementById('submit-btn');
+        const champs    = ['nom', 'prenom', 'telephone', 'email', 'sujet', 'description'];
+        const btnLabel  = btn.innerHTML;
 
-            if (!nom || !prenom || !telephone || !email || !sujet || !description) {
-                errorDiv.classList.remove('hidden');
+        const afficherErreur = (message) => {
+            errorDiv.innerHTML = '<i class="fa-solid fa-circle-exclamation mr-2" aria-hidden="true"></i>' + message;
+            errorDiv.classList.remove('hidden');
+        };
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const valeurs = {};
+            let premierInvalide = null;
+            champs.forEach(id => {
+                const champ = document.getElementById(id);
+                valeurs[id] = champ.value.trim();
+                const invalide = !valeurs[id] || (champ.type === 'email' && !champ.checkValidity());
+                champ.setAttribute('aria-invalid', invalide ? 'true' : 'false');
+                if (invalide && !premierInvalide) premierInvalide = champ;
+            });
+
+            const consentement = document.getElementById('consentement');
+            consentement.setAttribute('aria-invalid', consentement.checked ? 'false' : 'true');
+
+            if (premierInvalide) {
+                afficherErreur('Veuillez remplir correctement tous les champs obligatoires.');
+                premierInvalide.focus();
+                return;
+            }
+            if (!consentement.checked) {
+                afficherErreur("Veuillez accepter l'utilisation de vos données pour le traitement de votre demande.");
+                consentement.focus();
                 return;
             }
             errorDiv.classList.add('hidden');
 
             btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours…';
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Envoi en cours…';
+            statusMsg.textContent = 'Envoi de votre demande en cours.';
 
-            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                nom,
-                prenom,
-                telephone,
-                email,
-                sujet,
-                description
-            }).then(() => {
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> Demande envoyée !';
-                btn.classList.replace('bg-[#C8531A]', 'bg-green-600');
-                ['nom','prenom','telephone','email','sujet','description'].forEach(id => {
-                    document.getElementById(id).value = '';
-                });
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, valeurs).then(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Demande envoyée !';
+                btn.classList.replace('bg-[#B34A17]', 'bg-green-700');
+                btn.classList.remove('hover:bg-[#943A12]');
+                statusMsg.textContent = 'Votre demande a bien été envoyée. Nous vous recontacterons rapidement.';
+                form.reset();
             }).catch(() => {
                 btn.disabled = false;
-                btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Envoyer ma demande';
-                errorDiv.textContent = "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.";
-                errorDiv.classList.remove('hidden');
+                btn.innerHTML = btnLabel;
+                statusMsg.textContent = '';
+                afficherErreur("Une erreur s'est produite. Veuillez réessayer ou nous contacter directement au 06 65 44 13 06.");
             });
         });
     </script>
