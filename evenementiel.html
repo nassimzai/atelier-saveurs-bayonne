@@ -45,6 +45,15 @@
 
     <a href="#contenu" class="skip-link">Aller au contenu principal</a>
 
+    <!-- BANDEAU OFFRE DE RÉOUVERTURE : affiché/masqué automatiquement selon la date (script.js) -->
+    <div id="promo-banner" class="promo-banner" data-until="2026-11-22">
+        <p>
+            <span data-until="2026-11-20"><strong>Réouverture le samedi 21 novembre</strong> · Les 21 et 22 novembre : 1 plat acheté = 1 plat offert<span aria-hidden="true">*</span></span>
+            <span data-from="2026-11-21" hidden><strong>Offre de réouverture ce week-end</strong> · 1 plat acheté = 1 plat offert<span aria-hidden="true">*</span></span>
+            <a href="carte.html#offre" class="promo-banner-link">Voir l'offre<span class="sr-only"> et ses conditions</span></a>
+        </p>
+    </div>
+
     <!-- NAVBAR -->
     <header>
     <nav id="navbar" aria-label="Navigation principale" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-white">
@@ -192,10 +201,10 @@
                 </address>
                 <div class="mt-6 pt-6 border-t border-[#3A1A00]">
                     <h3 class="text-lg font-serif mb-3 text-[#E07820]"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>Horaires d'ouverture</h3>
-                    <div class="mb-4 rounded-lg border border-[#E07820] bg-[#2A1000] px-4 py-3 text-sm text-white leading-relaxed space-y-2" role="note">
+                    <div class="mb-4 rounded-lg border border-[#E07820] bg-[#2A1000] px-4 py-3 text-sm text-white leading-relaxed space-y-2" role="note" data-until="2026-11-20">
                         <p class="font-semibold uppercase tracking-wider text-[#E07820]"><i class="fa-solid fa-circle-info mr-2" aria-hidden="true"></i>Actuellement en prestation à l’extérieur</p>
                         <p>Notre magasin est exceptionnellement fermé pendant cette période.</p>
-                        <p>Réouverture du magasin prévue <strong>fin octobre 2026</strong>.</p>
+                        <p>Réouverture du magasin le <strong>samedi 21 novembre 2026</strong>, avec une offre de réouverture : <a href="carte.html#offre" class="underline text-[#E07820] hover:text-white">1 plat acheté = 1 plat offert</a> les 21 et 22 novembre.</p>
                         <p>Merci pour votre compréhension et à très bientôt&nbsp;!</p>
                     </div>
                     <div class="space-y-1 text-[#C4A882] text-sm">

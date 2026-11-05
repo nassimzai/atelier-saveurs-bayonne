@@ -295,3 +295,85 @@ main:focus { outline: none; }
     color: #A8421A;
     border-bottom-color: #A8421A;
 }
+
+/* ===== OFFRE DE RÉOUVERTURE (contenus datés, voir script.js) ===== */
+[hidden] { display: none !important; }
+
+.promo-banner {
+    background: #B34A17;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    padding: 0.6rem 1rem;
+}
+.promo-banner-link {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-left: 0.5rem;
+    white-space: nowrap;
+}
+.promo-banner-link:hover { text-decoration-thickness: 2px; }
+
+.promo-section,
+.promo-card {
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #B34A17 0%, #943A12 100%);
+}
+.promo-card {
+    border-radius: 32px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(26, 10, 0, 0.18);
+}
+.promo-kicker {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+}
+.promo-dates {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.promo-item {
+    background: rgba(26, 10, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+}
+.promo-legal {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    max-width: 46rem;
+    margin: 2rem auto 0;
+}
+.promo-badge {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.35rem 0 0.5rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    background: #B34A17;
+    color: #FFFFFF;
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+/* Bouton clair sur fond terre cuite */
+.btn-hero-light {
+    color: #1A0A00;
+    background: #FDF6ED;
+    border: 2px solid #FDF6ED;
+    box-shadow: 0 12px 28px -12px rgba(26, 10, 0, 0.6);
+}
+.btn-hero-light:hover {
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+    transform: translateY(-2px);
+}
+.btn-hero-light:hover .btn-icon { transform: translateX(4px); }

@@ -28,6 +28,15 @@
 
     <a href="#contenu" class="skip-link">Aller au contenu principal</a>
 
+    <!-- BANDEAU OFFRE DE RÉOUVERTURE : affiché/masqué automatiquement selon la date (script.js) -->
+    <div id="promo-banner" class="promo-banner" data-until="2026-11-22">
+        <p>
+            <span data-until="2026-11-20"><strong>Réouverture le samedi 21 novembre</strong> · Les 21 et 22 novembre : 1 plat acheté = 1 plat offert<span aria-hidden="true">*</span></span>
+            <span data-from="2026-11-21" hidden><strong>Offre de réouverture ce week-end</strong> · 1 plat acheté = 1 plat offert<span aria-hidden="true">*</span></span>
+            <a href="carte.html#offre" class="promo-banner-link">Voir l'offre<span class="sr-only"> et ses conditions</span></a>
+        </p>
+    </div>
+
     <!-- NAVBAR -->
     <header>
     <nav id="navbar" aria-label="Navigation principale" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-white">
@@ -96,6 +105,24 @@
     <section class="bg-[#FDF6ED] text-[#1A0A00] py-16 px-6">
         <div class="max-w-5xl mx-auto space-y-8">
 
+            <!-- OFFRE DE RÉOUVERTURE (jusqu'au 22/11/2026) -->
+            <section id="offre" class="promo-card scroll-mt-40" data-until="2026-11-22" aria-labelledby="offre-carte-titre">
+                <p class="promo-kicker">Offre de réouverture</p>
+                <p class="promo-dates">Samedi 21 &amp; dimanche 22 novembre 2026</p>
+                <h2 id="offre-carte-titre" class="font-serif text-3xl md:text-5xl leading-tight mb-6">1 plat acheté = 1 plat offert</h2>
+                <ul class="grid gap-3 md:grid-cols-2 mb-6 text-left" role="list">
+                    <li class="promo-item">
+                        <span class="font-serif text-xl font-bold block">Le Bon Quart</span>
+                        <span class="text-sm">1/4 de poulet fermier rôti et pommes de terre grenailles · 11,90 €</span>
+                    </li>
+                    <li class="promo-item">
+                        <span class="font-serif text-xl font-bold block">Couscous Poulet Fermier</span>
+                        <span class="text-sm">Poulet fermier, légumes de saison, pois chiches et semoule · 14,90 €</span>
+                    </li>
+                </ul>
+                <p class="promo-legal mt-0">Offre valable uniquement le samedi 21 et le dimanche 22 novembre 2026, aux horaires d'ouverture, sur place et à emporter (hors livraison Uber Eats). Concerne exclusivement Le Bon Quart et le Couscous Poulet Fermier : pour un plat acheté, le même plat est offert. Sans limite de quantité, dans la limite des stocks disponibles sur place.</p>
+            </section>
+
             <!-- PLATS SIGNATURE TAB -->
             <div class="space-y-16 rounded-[32px] border border-[#F1D0A0] bg-[#E8C785] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
                 <div class="rounded-[32px] border border-[#F1D0A0] bg-[#FFF4D1] p-8 shadow-[0_20px_60px_rgba(26,10,0,0.12)]">
@@ -108,6 +135,7 @@
                         <div class="flex flex-col md:flex-row gap-4 justify-center">
                             <div class="text-center max-w-2xl">
                                 <h3 class="text-xl font-serif font-bold">Le Bon Quart</h3>
+                                <p class="promo-badge" data-until="2026-11-22"><i class="fa-solid fa-gift mr-1" aria-hidden="true"></i>1 acheté = 1 offert · 21 &amp; 22/11</p>
                                 <p class="text-[#8B6347] italic">1/4 de poulet rôti fermier plus accompagnement pommes de terre grenailles.</p>
                             </div>
                         </div>
@@ -150,7 +178,6 @@
                                 <div class="flex flex-wrap gap-4 text-right">
                                     <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">19.90€</span></span>
                                     <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">22.00€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>XL</span><span class="text-[#A8421A] font-bold">25.90€</span></span>
                                 </div>
                             </div>
                         </div>
@@ -209,6 +236,7 @@
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
                                     <h3 class="text-xl font-serif font-bold">Le Bon Quart</h3>
+                                    <p class="promo-badge" data-until="2026-11-22"><i class="fa-solid fa-gift mr-1" aria-hidden="true"></i>1 acheté = 1 offert · 21 &amp; 22/11</p>
                                     <p class="text-[#8B6347] italic">1/4 de poulet rôti fermier plus accompagnement pommes de terre grenailles.</p>
                                 </div>
                                 <span class="text-[#A8421A] font-bold">11.90€</span>
@@ -269,7 +297,7 @@
                                     <p class="text-[#8B6347] italic">3 viandes : poulet fermier, merguez du boucher et agneau fondant. Légumes de saison, pois chiches, bouillons parfumés aux épices de l'atelier, Tfaya (confit d'oignons et raisins secs gourmands), sauce piquante à la demande et semoule vapeur parfumée au beurre.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>Taille Unique</span><span class="text-[#A8421A] font-bold">22.00€</span></span>
+                                    <span class="text-[#A8421A] font-bold">22.00€</span>
                                 </div>
                             </div>
                         </div>
@@ -280,7 +308,7 @@
                                     <p class="text-[#8B6347] italic">Poisson de la mer, légumes de saison, pois chiches, bouillons parfumés aux épices de l'atelier, Tfaya, sauce piquante à la demande et semoule vapeur parfumée au beurre.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>Taille Unique</span><span class="text-[#A8421A] font-bold">19.90€</span></span>
+                                    <span class="text-[#A8421A] font-bold">19.90€</span>
                                 </div>
                             </div>
                         </div>
@@ -288,11 +316,11 @@
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                                 <div class="text-left">
                                     <h3 class="text-xl font-serif font-bold">Couscous Poulet Fermier</h3>
+                                    <p class="promo-badge" data-until="2026-11-22"><i class="fa-solid fa-gift mr-1" aria-hidden="true"></i>1 acheté = 1 offert · 21 &amp; 22/11</p>
                                     <p class="text-[#8B6347] italic">Poulet fermier, légumes de saison, pois chiches, bouillons parfumés aux épices de l'atelier, semoule fine légère cuite à la vapeur parfumée au beurre et aux épices douces.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">14.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">16.90€</span></span>
+                                    <span class="text-[#A8421A] font-bold">14.90€</span>
                                 </div>
                             </div>
                         </div>
@@ -303,8 +331,7 @@
                                     <p class="text-[#8B6347] italic">Merguez du boucher, légumes de saison, pois chiches, bouillons parfumés aux épices de l'atelier, semoule fine légère cuite à la vapeur parfumée au beurre et aux épices douces.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">14.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">16.90€</span></span>
+                                    <span class="text-[#A8421A] font-bold">14.90€</span>
                                 </div>
                             </div>
                         </div>
@@ -315,8 +342,7 @@
                                     <p class="text-[#8B6347] italic">Poulet fermier, merguez du boucher, légumes de saison, pois chiches, bouillons parfumés aux épices de l'atelier, semoule fine légère cuite à la vapeur parfumée au beurre et aux épices douces.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">16.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">18.90€</span></span>
+                                    <span class="text-[#A8421A] font-bold">16.90€</span>
                                 </div>
                             </div>
                         </div>
@@ -339,8 +365,7 @@
                                     <p class="text-[#8B6347] italic">Poulet fermier cuit aux citrons confits, aromate, légumes, olive et semoule.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">14.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">17.90€</span></span>
+                                    <span class="text-[#A8421A] font-bold">14.90€</span>
                                 </div>
                             </div>
                         </div>
@@ -351,8 +376,7 @@
                                     <p class="text-[#8B6347] italic">Poulet fermier cuit aux citrons confits, olives, pruneaux, amande et semoule.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">16.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">18.90€</span></span>
+                                    <span class="text-[#A8421A] font-bold">16.90€</span>
                                 </div>
                             </div>
                         </div>
@@ -363,8 +387,7 @@
                                     <p class="text-[#8B6347] italic">Légumes de saison aux citrons confits, aromates et semoule.</p>
                                 </div>
                                 <div class="flex flex-wrap gap-4 text-right">
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>M</span><span class="text-[#A8421A] font-bold">12.90€</span></span>
-                                    <span class="inline-flex items-center gap-2 text-sm uppercase text-[#8B6347]"><span>L</span><span class="text-[#A8421A] font-bold">15.90€</span></span>
+                                    <span class="text-[#A8421A] font-bold">12.90€</span>
                                 </div>
                             </div>
                         </div>
@@ -436,10 +459,10 @@
                 </address>
                 <div class="mt-6 pt-6 border-t border-[#3A1A00]">
                     <h3 class="text-lg font-serif mb-3 text-[#E07820]"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>Horaires d'ouverture</h3>
-                    <div class="mb-4 rounded-lg border border-[#E07820] bg-[#2A1000] px-4 py-3 text-sm text-white leading-relaxed space-y-2" role="note">
+                    <div class="mb-4 rounded-lg border border-[#E07820] bg-[#2A1000] px-4 py-3 text-sm text-white leading-relaxed space-y-2" role="note" data-until="2026-11-20">
                         <p class="font-semibold uppercase tracking-wider text-[#E07820]"><i class="fa-solid fa-circle-info mr-2" aria-hidden="true"></i>Actuellement en prestation à l’extérieur</p>
                         <p>Notre magasin est exceptionnellement fermé pendant cette période.</p>
-                        <p>Réouverture du magasin prévue <strong>fin octobre 2026</strong>.</p>
+                        <p>Réouverture du magasin le <strong>samedi 21 novembre 2026</strong>, avec une offre de réouverture : <a href="carte.html#offre" class="underline text-[#E07820] hover:text-white">1 plat acheté = 1 plat offert</a> les 21 et 22 novembre.</p>
                         <p>Merci pour votre compréhension et à très bientôt&nbsp;!</p>
                     </div>
                     <div class="space-y-1 text-[#C4A882] text-sm">

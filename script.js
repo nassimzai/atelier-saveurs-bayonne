@@ -97,3 +97,21 @@ window.addEventListener('load', () => {
         activateTabLink(link);
     }
 });
+
+// 4. Contenus datés : data-from / data-until au format AAAA-MM-JJ (dates incluses, heure de Paris)
+const aujourdhui = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Paris' }).format(new Date());
+document.querySelectorAll('[data-from], [data-until]').forEach(el => {
+    const debut = el.dataset.from;
+    const fin = el.dataset.until;
+    el.hidden = Boolean((debut && aujourdhui < debut) || (fin && aujourdhui > fin));
+});
+
+// 5. Bandeau d'annonce : la barre de navigation fixe se place sous le bandeau tant qu'il est visible
+const banniere = document.getElementById('promo-banner');
+const placerNav = () => {
+    const hauteur = banniere && !banniere.hidden ? banniere.offsetHeight : 0;
+    nav.style.top = Math.max(0, hauteur - window.scrollY) + 'px';
+};
+placerNav();
+window.addEventListener('scroll', placerNav, { passive: true });
+window.addEventListener('resize', placerNav);
